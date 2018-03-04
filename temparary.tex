@@ -1,0 +1,35 @@
+\section{Mathematical Properties}
+Consider $\mathcal{D}$ to be a set of observations, such that $\mathcal{D} = X \biguplus Y$, $\mathcal{D}$ is the set of two sets $X$ and $Y$ with no shared elements between them; $X$ is the set of normal observations, while $Y$ is the set of outliers; Denote $\epsilon$ as threshold; $Fe$ is the feature of a function $F$ of the an observation; Any function $F$ uses feature $Fe$ must satisfy the following properties:
+
+\begin{def}\textbf{(Outlier Existence)} If there are at least two clusters then we should check for outliers:
+\begin{align}
+degree(D) \geq 2
+\end{align}
+\end{def}
+
+\begin{def}\textbf{(Normality)} To check whether a certain observation is normal:
+\begin{align}
+x \in D \text{ is normal observation if } x \in X | d(x) \geq \epsilon
+\end{align}
+\end{def}
+
+\begin{def}\textbf{(Outlier)} To check whether a certain observation is an outlier:
+\begin{align}
+y \in D \text{ is an outlier if } y \in Y | d(y) < \epsilon
+\end{align}
+\end{def}
+
+\section{Motivation}
+The motivation of this research was to compare two algorithms of outlier detection. Precisely, One Class Support Vector Machine and Local Outlier Factor, bringing together two advantages:
+\begin{itemize}
+\item Ability to know the algorithm with the higher efficiency.
+\item Ability to know the algorithm with the higher effectiveness.
+\end{itemize}
+
+\section{Objective}
+In order to achieve the above goals, the following objectives must be satisfied:
+\begin{itemize}
+\item Simplicity of structure.
+\item Functional Completeness.
+\end{itemize}
+

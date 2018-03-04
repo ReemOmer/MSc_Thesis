@@ -1,0 +1,190 @@
+\chapter{Experiment} \label{Experiment}
+In this section, LOF is compared to OCSVM on detecting outliers. The methodology of the research, input data and evaluation criteria are described and the results of the two algorithms are interpreted.
+
+A comparison of algorithms is done by using a practical example as a test case. While this doesn't unequivocally say which algorithm is better, it will give some evidence towards which one is better for a complex high-dimensional dataset.
+
+The running environment of this experiment consists of a Dell personal computer with quad-core processors running at 3.20 GHz with 8 GB of main memory DDR3. The operating system used is Ubuntu 14.04 LTS. The experiment was conducted using the Python programming language version 3 \footnote{Python programming language site: \url{https://www.python.org}.}, where both algorithms are implemented using built-in functions imported from the Scikit learn library
+\footnote{Scikit learn library site: \url{http://scikit-learn.org}.}.
+\section{Methodology}
+The question of this research is: which one of LOF and OCSVM is better in detecting outliers in a highly unbalanced dataset? A highly unbalanced dataset means the number of normal observations is very high compared to the number of outliers. The workflow in Figure~\ref{workflow} describes the comparative study steps to answer the previous question.
+\begin{figure}[!h]
+\centering 
+\includegraphics[width=8cm,resolution=600]{images/workflow}
+\caption{Methodology for comparing the performance of LOF and OCSVM algorithms on detecting fraud transaction on a credit card transactions dataset.}
+\label{workflow} 
+\end{figure}
+
+The LOF algorithm requires one parameter $k$; which is the number of close neighbors that each normal observation should have, as mentioned in Chapter~\ref{Local_Outlier_Factor}. OCSVM requires two parameters: $\gamma$ defines how far the influence of an observation reaches, and $\nu$ is the proportion of outliers expected in the data. More details are in Section~\ref{OCSVM}.
+
+In OCSVM selecting a kernel has a huge impact on the results that are generated. RBF is more flexible than other kernels, so the best possible prediction would be obtained \citep{RBFkernel}.
+
+Once the dataset and algorithm requirements are know, the results of LOF and OCSVM need to be compared. The results of these algorithms are lists of detected outliers. True Positive Rate (TPR) and False Positive Rate (FPR) will be used for comparison this is described in Section~\ref{evaluation_matrices}. Then the study of detected outliers is interpreted to understand the performance of each algorithm in the dataset.
+\section{Input Data}
+A dataset from Kaggle data science repository is used to evaluate the performance of the algorithms. The dataset that has been used contains information of credit card transactions made by credit cards in September 2013 by European cardholders \footnote{The credit cards transactions dataset is available in \url{https://www.kaggle.com/dalpozz/creditcardfraud}.}. The aim is to detect the fraudulent transactions, for example transferring or withdrawing unusually large amounts of money from one account. These transactions are considered as outliers.
+The dataset consists of 284,807 transactions, 492 of which are fraudulent. Each transaction has 32 numerical variables which contain 28 features which are the results of Principal Component Analysis (PCA) transformation. The original features have been obscured to protect anonymity. 
+
+Figure~\ref{distribution} represents the transactions amount of the observations in the dataset after the preprocessing. Evidently, the number of fraud observations is less than the number of normal observations, which makes the credit card transactions dataset an unbalanced dataset. The fraud transactions (outliers) has a normal behaviour.
+\begin{figure}[!h]
+\includegraphics[width=1.0\textwidth]{images/distribution}
+\caption{Normal and fraud transactions amounts distribution of a credit card fraud dataset}
+\label{distribution} 
+\end{figure}
+
+The data needs to be preprocessed before applying the algorithms due to running environment limitations. This is performed by selecting the 28 features and by choosing some observations randomly using the Random library in Python \footnote{The Random library in Python is available in \url{https://docs.python.org/3/library/random.html}.}, and including all the outliers in the data set. More precisely, 40,000 observations are selected randomly from the dataset and all the outliers 492 observations were included in the new dataset. \newpage
+The percentage of normal observations is approximately 98.59$\%$, while it is approximately 1.41$\%$ outliers out of 100$\%$.  The dataset is classified into two classes: normal observations and outliers.
+The new dataset was split into classes as shown in Table~\ref{tab:mylabel} with respect to the algorithm.
+
+In LOF algorithm a range of 10 values has been used for $k$. The $k$-lower bound was 10 and the $k$-upper bound was 100. Also, OCSVM has a range of 10 values for its parameters $\nu$ and $\gamma$. $\nu$ starts from 0.01 and ends with 0.02, $\gamma$ starts from 0.001 and ends with  0.0001. (These parameters are chosen because they showed the best performance after testing).
+
+LOF algorithm uses the entire dataset to train the classifier based on the density of the observations, using the steps described in Chapter~\ref{Local_Outlier_Factor}. OCSVM algorithm splits the data into two sets, the first set is for classifier training which contains just the normal observations, while the second set is used to test the classifier.
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\textbf{Algorithm}      & \textbf{Training} & \textbf{Testing}  \\ \hline
+\textbf{LOF}   & 40492    & 40492        \\ \hline
+\textbf{OCSVM} & 30000    & 10492    \\ \hline
+\end{tabular}
+\caption{Observations division in LOF and OCSVM. LOF takes all the observations in training and testing while OCSVM divide the dataset into training data and testing data.}\label{tab:mylabel}
+\end{table}
+\vspace{-2.2em}
+\section{Evaluation Metrics}\label{evaluation_matrices}
+\vspace{-0.5em}
+Evaluating the performance of LOF and OCSVM requires a performance measurements that can scale the output into useful information. One of the performance measurements is a confusion matrix. A confusion matrix is a technique to summarize the performance of a classification algorithm by comparing the actual value of the class with the predicted value \citep{Confusion}. Considering a normal observation as positive and an outlier as negative, there are four possible outcomes from the binary classifier. Figure~\ref{confusion-matrix} shows the confusion matrix components.
+\begin{figure}[!h]
+\qquad \quad
+\includegraphics[width=0.7\linewidth,resolution=300]{images/con_mat}
+\caption{Confusion matrix components. Positive sign refers to normal observations and minus sign refers to outliers. The components obtain by comparing actual to predicted values.}
+\label{confusion-matrix} 
+\end{figure}
+
+Most of the machine learning methods use an accuracy rate to explain the behavior of a classifier. However, an accuracy rate doesn't perform well in unbalanced datasets \citep{ROC}.
+
+\textbf{Confusion Matrix Components:}
+\begin{itemize}
+\item True Positive (TP): When the actual value is a normal observation and the predicted value is normal.
+\item True Negative (TN): When the actual value is an outlier observation and the predicted value is an outlier.
+\item False Positive (FP): When the actual value is an outlier and the predicted value is a normal observation.
+\item False Negative (FN): When the actual value is normal and the predicted value is an outlier.
+\end{itemize}
+To evaluate the classification of unbalanced dataset two components of the confusion matrix, TP and FP are combined to form a new measurement Receiver Operator Characteristic (ROC) curve.
+
+\textbf{ROC curve:}
+
+An ROC curve is a two-dimensional graph with False Positive Rate (FPR) on the x-axis and True Positive Rate (TPR) on the y-axis, which visualizes the performance of the classifier \citep{ROC}.
+
+\textbf{True Positive Rate:}
+Also called the recall rate or sensitivity rate, The TPR is defined as the proportion of positive observations that are correctly classified as positive \citep{AUROC}:
+$$
+\text{TPR} = \frac{\text{Positives correctly classified}}{\text{Total actual positives}} = \frac{\text{TP}}{\text{TP+FN}}
+$$
+
+\textbf{False Positive Rate:}
+Also called the fallout rate, the FPR is defined proportion of negative observations that are incorrectly classified as positive \citep{AUROC}:
+$$
+\text{FPR} = \frac{\text{Negatives incorrectly classified}}{\text{Total actual negatives}} = \frac{\text{FP}}{\text{FP+TN}}
+$$
+
+In Figure~\ref{OCSVM2D} the top left corner of the graph is the optimal point where the FPR is 0 and TPR is 1 which is the largest Area Under the Curve (AUC) region. AUC is used in order to determine the best model that predicts the classes \citep{AUROC}. 
+
+The good classifier is the one with high TPR and low FPR which results in large AUC region \citep{AUC}. In other words, the higher the TPR, the fewer positive observations will be missed. The higher the FPR, the more negative observations will be incorrectly classified \citep{AUROC}.
+The AUROC is between 0 and 1, and AUROC = 1 means the prediction model perfectly classifies the test data.
+%\vspace{-1em}
+\section{Analysis and Results}
+%\vspace{-0.7em}
+The results of LOF for detecting fraud credit card transactions with two features are shown in Figure~\ref{LOF2D}. The LOF algorithm was able to detect the fraud transactions (outliers) using test features (2-dimensional space). In Figure~\ref{OCSVM2D} OCSVM detects the fraud transactions (outliers) in two features (2-dimensional space), and it also defines the region of the normal credit card transactions.
+%\vspace{-1.2em}
+\begin{figure}[H]
+\centering
+\minipage{0.45\textwidth}
+  \includegraphics[width=8.5cm]{images/2features_LOF}
+  \caption{LOF results of 2 features\\with $k=20$.}
+  \label{LOF2D}
+\endminipage\hspace{0.7cm}
+\minipage{0.45\textwidth}
+  \includegraphics[width=8.5cm,height=6.5cm]{images/2features_OCSVM}
+    \caption{OCSVM results of 2 features with $\nu$=0.1, $\gamma$=0.1 and RBF kernel.}
+      \label{OCSVM2D}
+\endminipage
+\end{figure}
+%\vspace{-1.5em}
+The behavior of LOF has been changed when 28 features applied. Table~\ref{tab:myLOF} shows the percentages of the performance measurement results for outlier detection within a range of values for $k$-nearest neighbors with 28 features. Table~\ref{tab:myOCSVM} shows the the percentages of the performance measurement results with different values for $\gamma$ and $\nu$ parameters. the parameters for both algorithms were chosen to be near optimal parameters which is done by testing different ranges of parameter values ranges.
+
+To measure the results, ROC curves have been introduced, which is a performance measurement for unbalanced datasets by comparing the TPR and FPR.
+
+The ROC curve is generated by using ten parameter values for $k$ in LOF algorithm, each one has its own AUC. The same for OCSVM, ten parameter values for $\nu$ and $\gamma$ are used. The values for $k$, $\nu$ and $\gamma$ are the ones that give highest percentages of TPR and AUC, it is also the values that find the lowest percentage of FPR for both algorithms. Note that using different parameter values will result in different TPR, FPR and AUC percentages.
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|c|l|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\multicolumn{8}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{LOF}}                                                                                      \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+\multicolumn{1}{|c|}{\cellcolor[HTML]{C0C0C0}$k$} & TP    & FN   & FP  & TN  & TPR    & FPR    & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}AUC} \\ \hline
+10                                              & 35939 & 3986 & 503 & 64  & 0.9001 & 0.8871 & 0.5227                                           \\ \hline
+20                                              & 35952 & 3973 & 490 & 77  & 0.9004 & 0.8641 & 0.5163                                           \\ \hline
+30                                              & 35967 & 3958 & 475 & 92  & 0.9008 & 0.8377 & 0.5021                                           \\ \hline
+40                                              & 35980 & 3945 & 462 & 105 & 0.9011 & 0.8148 & 0.5074                                           \\ \hline
+50                                              & 35984 & 3941 & 458 & 109 & 0.9012 & 0.8077 & 0.5128                                           \\ \hline
+60                                              & 35982 & 3943 & 460 & 107 & 0.9012 & 0.8112 & 0.5105                                           \\ \hline
+70                                              & 35977 & 3948 & 465 & 102 & 0.9011 & 0.8201 & 0.5012                                           \\ \hline
+80                                              & 35981 & 3944 & 461 & 106 & 0.9012 & 0.8130 & 0.4848                                           \\ \hline
+90                                              & 35980 & 3945 & 462 & 105 & 0.9011 & 0.8148 & 0.4670                                           \\ \hline
+100                                             & 35990 & 3935 & 452 & 115 & 0.9014 & 0.7971 & 0.4477                                           \\ \hline
+\end{tabular}
+\vspace{1em}
+\caption{The results of LOF are truncated to 4 digits. When $k$ value increases TPR increases and FPR decreases.}\label{tab:myLOF}
+\end{table}
+
+Figure~\ref{LOF_TPR_FPR} shows the highest percentage of AUC for LOF which is 52$\%$ for when $k$ = 10. From Table~\ref{tab:myLOF} the higher the $k$ value goes, the lower the AUC will be. In Figure~\ref{OCSVM_TPR_FPR} the percentage of AUC of OCSVM is higher than LOF. Precisely, AUC = 94$\%$. The value of AUC gets larger by increasing $\nu$ value and decreasing the $\gamma$ value. For both figures, the dashed diagonal line presents the baseline of ROC curve to see the performance of the model when the classes are assigned randomly. Preferable models are the ones above this line \citep{AUROC}.
+
+\vspace{1em}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|c|c|c|c|c|c|l|}
+\hline
+\rowcolor[HTML]{9B9B9B} 
+\multicolumn{9}{|c|}{\cellcolor[HTML]{9B9B9B}\textbf{OCSVM}}                                                                                                         \\ \hline
+\rowcolor[HTML]{C0C0C0} 
+$\nu$ & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}$\gamma$} & TP & FN & FP & TN & TPR & FPR & AUC \\ \hline
+0.01  & 0.001                                                 & 9812        & 113         & 123         & 444         & 0.9886       & 0.2169       & 0.9307       \\ \hline
+0.01  & 0.0009                                                & 9730        & 195         & 84          & 483         & 0.9803       & 0.1481       & 0.9350       \\ \hline
+0.02  & 0.0008                                                & 9637        & 288         & 72          & 495         & 0.9709       & 0.1269       & 0.9360       \\ \hline
+0.03  & 0.0007                                                & 9524        & 401         & 68          & 499         & 0.9595       & 0.1199       & 0.9375       \\ \hline
+0.04  & 0.0006                                                & 9419        & 506         & 67          & 500         & 0.9490       & 0.1181       & 0.9387       \\ \hline
+0.05  & 0.0005                                                & 9322        & 603         & 65          & 502         & 0.9392       & 0.1146       & 0.9390       \\ \hline
+0.06  & 0.0004                                                & 9239        & 686         & 62          & 505         & 0.9308       & 0.1093       & 0.9394       \\ \hline
+0.07  & 0.0003                                                & 9116        & 809         & 61          & 506         & 0.9184       & 0.1075       & 0.9399       \\ \hline
+0.08  & 0.0002                                                & 9015        & 910         & 60          & 507         & 0.9083       & 0.1058       & 0.9403       \\ \hline
+0.09  & 0.0001                                                & 8878        & 1047        & 59          & 508         & 0.8945       & 0.1040       & 0.9407       \\ \hline
+\end{tabular}
+\vspace{1em}
+\caption{The results of OCSVM are truncated to 4 digits. The increase in $\nu$ value and the decrease in $\gamma$, decreases both TPR and FPR values.}\label{tab:myOCSVM}
+\end{table}
+
+Note that the LOF spends 17.1835 seconds to find the testing results of 10 parameter values for $k$, while OCSVM spends 85.7840 seconds for 10 parameter values for $\nu$ and $\gamma$.
+
+\begin{figure}[H]
+\begin{center}
+\minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{images/LOF_ROC}
+  \caption{LOF model results when parameter \\value $k$=10 gives the highest AUC percentage.}
+  \label{LOF_TPR_FPR}
+  \vspace{-1.5em}
+\endminipage
+\minipage{0.5\textwidth}
+  \includegraphics[width=\linewidth]{images/OCSVM_ROC}
+  \caption{Highest AUC (94$\%$) is obtained by setting the parameters $\nu$=0.09 and $\gamma$=0.0001.}
+  \label{OCSVM_TPR_FPR}
+  \vspace{-1.5em}
+\endminipage
+\end{center}
+\end{figure}
+
+\section{Discussion}
+The experiment showed that both of algorithms detect outliers with different percentages. By comparing the values of the TPR rate and the FPR rate. It has been found that OCSVM algorithm had a higher percentage of TPR and a low percentage of FPR. The LOF algorithm on the other hand showed high FPR, which means it classified a large fraction of the fraud transactions as normal transactions. The TPR for LOF was very low, which results in a small number of actual normal transactions that were classified normal.
+
+The poor performance of LOF was unexpected, even though the range of $k$-nearest neighbors was big. This might be because of the high dimensionality of the dataset and closeness of the fraud transactions (outliers) to the normal transactions. The poor performance results of LOF is not a fault of algorithm itself. The LOF algorithm might not be well-tested.
+
+To summarise, the OCSVM algorithm took more time comparing to LOF algorithm (factor of $\frac{85.7840}{17.1835} \approx 1.7$), but it showed an excellent performance on detecting outliers, with a percentage starts from 93$\%$ to 94$\%$ for AUC. \footnote{All the codes that used to generate research results and more are available in: \url{https://github.com/sustecha/LOF_OCSVM.git}}

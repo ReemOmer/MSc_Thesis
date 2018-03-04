@@ -1,0 +1,186 @@
+\chapter{Local Outlier Factor} \label{LOF} \label{Local_Outlier_Factor}
+It is one of the Density Based Outlier Detection methods \citep{Silvia}. The idea of Local Outlier Factor (LOF) method is to assign probability for each object/observation of being an outlier \citep{Markus}. The outlier factor is local because it takes into account only the neighbors of each observation, so it doesn't require comparing observations with the global data distribution \citep{LOF}. Figure ~\ref{LOF-MD2} shows the basic idea of LOF of a point with densities of its neighbors.
+ \begin{figure}[!h]
+ \centering 
+ \includegraphics[width=0.35\textwidth]{images/OF-MD2-grayscale}
+ \caption{Point A has a much lower density than its neighbors \citep{LOF}.}
+ \label{LOF-MD2} 
+ \end{figure}
+ 
+The LOF of an observation is based on one parameter $k$, which is the number of nearest neighbors to the observation \citep{Markus}. Developing LOF requires some notations and definitions which will be described in this section. Considering $p,q,o$ as observations in the dataset, $d$ is the distance between two observations, then the distance between observation $p$ and $q$ is given by $d(p,q)$. And let $C$ be a cluster and $D$ is a dataset, then we define $d(p,C)$ to be the minimum distance between $p$ and $q$ observations in $C$ \citep{Knorr}.
+
+\begin{defn}[Global Outlier in dataset $D$] \label{LOF1} An observation $p$ in a dataset $D$ is a Distance-based$(pct,k)$-outlier if at least percentage ($pct$) of the observations in $D$ lies larger than distance $k$ from $p$ \citep{Markus}.
+\end{defn}
+Definition~\ref{LOF1} captures only some of the outliers (global outliers), however, in some datasets the interest lies in the observations that are relative to their local neighbourhoods with respect to neighbourhood's densities (local outliers). LOF method use a previous concepts to assign degrees to observations of being outlying, unlike other algorithms which uses a \textit{binary property}, so either the observation is a normal point or an outlier.
+\begin{defn}[k-Distance of an object $p$] \label{LOF2} For any positive $k$, $k-distance(p)$ is defined as the distance $d(p,o)$ between $p$ and an object $o \in D$ such that:
+\begin{align}
+\label{a}
+\begin{gathered}
+\text{for at least $k$ objects } o' \in D \setminus \{p\} \text{ it holds that t } d(p,o') \leq d(p,o), \\ \text{for at least $k-1$ objects } o' \in D \setminus \{p\} \text{ it holds that } d(p,o') < d(p,o).
+\end{gathered} 
+\end{align}
+In this step the distance to the farthest of $k$ objects nearest to $p$ has been defined \citep{Markus}.
+\end{defn}
+
+\begin{defn}[k-Distance Neighbourhood of an Object $p$] \label{LOF3} It is the k-distance of $p$ neighbors \citep{Markus}.
+\begin{align}
+\label{b}
+N_{k}(p) = \lbrace q \in D \ \{p\} | d(p,q) \leq k-distance(p) \rbrace
+\end{align}
+\end{defn}
+
+\begin{defn}[Reachability Distance of an Object $p$ with respect to object $o$] \label{LOF4} It is the true distance between $p$ and $o$ but at least the k-distance($o$) \citep{LOF}.
+\begin{align}
+\label{c}
+reach-dist_k(p,o) = \max \lbrace k-distance(o),d(p,o) \rbrace
+\end{align}
+The reachability distance step~\ref{LOF4} is used to smooth statistical fluctuations \citep{Markus} and it is a replacement for Euclidean distance. If the Euclidean distance between two points is very small, the following steps will give a bias ratio of distance. Therefore, the LOF algorithm uses reachability distance instead \citep{Mathew}. 
+\end{defn}
+
+\begin{defn}[Local Reachability Density of an object $p$] \label{LOF5} It is an inverse of average reachability distance of an object $p$ from its neighbours of $p$ \citep{LOF}:
+\begin{align}
+\label{d}
+lrd(p) = 1/ \bigg( \frac{\sum_{o \in N_{k}(p)} reach-dist_{k}(p,o)}{|N_{k}(p)|} \bigg)  
+\end{align}
+In Figure~\ref{reach_dist} the reachability distance of observation $p1$ is different than the reachability distance of observation $p2$, because $p2$ is not one of the $k$-nearest neighbour of $o$.
+\begin{figure}[!h]
+\centering 
+\includegraphics[width=0.5\textwidth]{images/reach_dist}
+\caption{Reachability density of two points $p_1$ and $p_2$ w.r.t. point $o$ \citep{LOF}.}
+\label{reach_dist} 
+\end{figure}
+\end{defn} 
+If the summation of reachability distances is 0, then the local density can be $\infty$, which can only happens if there are two or more observations that share the same spatial coordinates \citep{Markus}.
+
+\begin{defn}[Local Outlier Factor for an object $p$] \label{LOF6}
+It is a compression between local reachability density of an observation and local reachability density of its neighbours, which captures the degree to which $p$ is called an outlier \citep{Hongyin}. The higher value of LOF the more likely to be an outlier, in other words, if density around $p$ is lower than density around $p$’s neighbors, then $p$ is an outlier \citep{Markus}.
+\begin{align}
+\label{e}
+LOF_{k}(p) = \frac{\sum_{o \in N_{k}(p)}\frac{lrd_{k}(o)}{lrd_{k}(p)}} {|N_{k}(p)|}
+\end{align}
+\end{defn}
+
+\section{Properties of LOF}
+\subsection{LOF for Observations Deep in a Cluster} The LOF value for the observations deep in the cluster is approximately equal to 1, indicating that they can't be labeled as outliers.
+\begin{lem}
+\label{lem1}
+\citep{Markus} Let $C$ be a collection of observations. 
+Let the minimum reachability distance and the maximum reachability distance of observations in $C$ be $\min \lbrace reach-dist(p,q)|p,q \in C \rbrace$ and $\max \lbrace reach-dist(p,q)|p,q \in C \rbrace$ respectively. Let $\epsilon$ be defined as $min-reach-dist/max-reach-dist-1$. Then for all observations $p \in C$ it holds:
+\begin{align}
+1/(1+\epsilon) \leq LOF(p) \leq (1+\epsilon)
+\end{align}
+such that:
+\begin{align}
+\forall N_k(p):N_k(p) \in C \\
+\forall N_k(q):N_k(q) \in C
+\end{align}
+\begin{comment}
+(i) all the $k$-nearest neighbors q of p are in C, and
+(ii) all the $k$-nearest neighbors o of q are also in C,
+it holds that 1/(1 + ε) ≤ LOF(p) ≤ (1 + ε).
+\end{comment}
+\end{lem}
+Consider a tight cluster $C$, the $\epsilon$ value in Lemma~\ref{lem1} can be quite small for deep observations $p$, thus it forces the LOF of $p$ to be close to 1 \citep{Markus}.
+\subsection{Upper and Lower Bound on LOF}
+Lemma~\ref{lem1} shows the LOF value for the deep observations being approximately equal to 1, now for the observations outside and in the border of the cluster, upper and lower bound of LOF value should be obtained by using Theorem~\ref{thm1} which requires the following terms \citep{Markus}:
+\begin{itemize}
+\item{Minimum reachability distance between $p$ and $k$-nearest neighbour of $p$ is}
+\begin{align}
+direct_{min}(p) = min \lbrace reach-dist(p,q) | q \in N_{k}(p) \rbrace
+\end{align}
+\item{Maximum reachability distance between $p$ and $k$-nearest neighbour of $p$ is}
+\begin{align}
+direct_{max}(p) = max \lbrace reach-dist(p,q) | q \in N_{k}(p) \rbrace
+\end{align}
+\item{Minimum reachability distance between $q$ and $k$-nearest neighbour of $q$ is}
+\begin{align}
+indirect_{min}(p) = min \lbrace reach-dist(q,o) | q \in N_{k}(p) \text{ and } o \in N_{k}(q) \rbrace
+\end{align}
+\item{Maximum reachability distance between $q$ and $k$-nearest neighbour of $q$ is}
+\begin{align}
+indirect_{max}(p) = max \lbrace reach-dist(q,o) | q \in N_{k}(p) \text{ and } o \in N_{k}(q) \rbrace
+\end{align}
+\end{itemize}
+\begin{thm}\label{thm1}
+Let $p$ be an observation from the dataset $D$, and $1 \leq k \leq |D|$:
+\begin{align}
+\frac{direct_{min}(p)}{indirect_{max}(p)} \leq LOF(p) \leq \frac{direct_{max}(p)}{indirect_{max}(p)}
+\end{align}
+\end{thm}
+Theorem~\ref{thm1} is a function of the reachability distances in $p$ direct neighbourhood relative to those in $p$ indirect neighbourhood, it can be applied to all the observations $p$ in the dataset $D$ and it can give tighter bounds for deep observations than Lemma~\ref{lem1} because the Theorem~\ref{thm1} is based on $k$-nearest neighbours, unlike Lemma~\ref{lem1} which is based on minimum and maximum reachability distances \citep{Markus}.
+\subsection{Bounds Tightness} Tightness of the bounds depends on the nature of the point under consideration and it defines the magnitude between LOF upper and lower bounds. If the fluctuation of average reachability distance in the direct and indirect neighbourhoods is small, then bounds are tight. But if the observation $p$ has neighbours in multiple clusters having different densities, then the bounds are not tight \citep{Markus}.
+\subsection{$k$ impact on LOF} The value of LOF affected by the parameter $k$, $k$ has unpredictable impact on LOF, and this result in problems. However, there is a heuristic method that determine bounds for $k$, which helps avoid the previous weakness. The method proposed by Markus M. Breunig and others \citep{Markus}.
+
+\section{LOF Algorithm}
+The algorithm described below \citep{Malak} gives an explanation about the LOF Definition~\ref{LOF6} with details to local reachability density.
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+  \INPUT\tikzmark{a}  
+  \Statex $k$ \Comment The number of neighbours
+  \Statex $D$  \Comment A set of observations
+  \OUTPUT\tikzmark{a}  
+    \Statex $lof values$ \Comment This algorithm returns a vector with local density factors
+   \ASSUME,\tikzmark{a}  
+   \Statex $k-dist(D,p)$ \Comment Return a matrix the k-dist neighbours~\ref{LOF2} and their k-distances~\ref{LOF3}
+   \Statex $reach-dist_k(p)$  \Comment Return the local reachability density of each $p \in D$ ~\ref{LOF4}    
+    \Procedure{LOF}{$k,D$}
+    \State $lof \gets NULL$       
+            \For{each point $p$}\Comment{Assign value to k-th nearest neighbours}
+              \State $kNNeighbours \gets k-dist(D,k)$
+              \State $lrd \gets reach-dist_k(KNNeighbours,k)$        
+             \For{each $p$ in kNNeigbours}
+			             \State $\max \lbrace lof,templof \rbrace$ \Comment{Find the reachability distance between $p$ and $k$-neighbours ~\ref{LOF4}}
+		                 \State $templof[i] \gets \sum ((lrd[o \in N(p)]) / lrd[i])/ |N(p)|$\Comment{This step computes the local reachability density of point $p$ ~\ref{LOF5}}
+                   \EndFor\label{loffor}        
+            \EndFor\label{loffor}    
+    \State \textbf{return} $\top(lof)$\Comment{return the top values of the lof vector~\ref{LOF6}}
+    \EndProcedure
+  \end{algorithmic}
+  \caption{Local Outlier Factor algorithm}\label{lof}
+\end{algorithm}
+% % % % % % % % % lof algorithm % % % % % % % %
+     \begin{comment}    
+    \FOR{each point $p$}\Comment{We have the answer if r is 0}
+      \State $kNNeighbours \gets k-dist(D,k)$
+      \State $lrd \gets reach-dist_k(KNNeighbours,k)$
+
+     \FOR{each $p$ in kNNeigbours}
+               \State $templof[i] \gets \sum ((lrd[o \in N(p)]) / lrd[i])/ |N(p)|$
+               \State $\max \lbrace lof,templof \rbrace$
+           \EndFor\label{loffor}
+
+    \EndFor\label{loffor}
+     \end{comment}  
+% testing algorithms % % % % % % % % % % % % % %
+\begin{comment}
+\begin{algorithm}[H]
+  \begin{algorithmic}[1]
+  \INPUT\tikzmark{a}  
+  \Statex $a$ \Comment The a of the algo
+  \Statex $b$  \Comment The b of the algo
+  \Statex $c$  \Comment The c of the algo\tikzmark{b}
+    \Procedure{Euclid}{$a,b$}\Comment{The g.c.d. of a and b}
+    \State $r\gets a\bmod b$
+    \While{$r\not=0$}\Comment{We have the answer if r is 0}
+      \State $a\gets b$
+      \State $b\gets r$
+      \State $r\gets a\bmod b$
+    \EndWhile\label{euclidendwhile}
+    \State \textbf{return} $b$\Comment{The gcd is b}
+    \EndProcedure
+  \end{algorithmic}
+  \caption{Euclid’s algorithm}\label{euclid}
+\end{algorithm}
+% % % % % % % % % % % % % % % % 
+\begin{algorithm}
+\caption{Expand $K$- Plex}{ }
+\begin{algorithmic}[1]
+\Statex
+\INPUT\tikzmark{a}  
+\Statex $a$ \Comment The a of the algo
+\Statex $b$  \Comment The b of the algo
+\Statex $c$  \Comment The c of the algo\tikzmark{b}
+\State $V \gets 0$
+\end{algorithmic}
+\end{algorithm}
+\end{comment}

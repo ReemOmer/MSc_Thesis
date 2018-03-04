@@ -1,0 +1,237 @@
+\chapter{Support Vector Machines} \label{Support_Vector_Machine}
+Support Vector Machines (SVMs) method is one of the Artificial Intelligence Outlier Detection methods \citep{Silvia} and it can be applied in classification problems. The main idea of SVMs is to find the optimal hyperplane in feature space that best separates classes \citep{Maimon}. In this section classifiers concepts will be described, then it will extended to One Class Support Vector Machine (OCSVM).
+\section{Basics of SVMs}
+To describe the method consider the set $\Omega = \lbrace (x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n) \rbrace$; where $i \in \mathbb{R}^{+}$ is i$th$ element in the set, $x_i \in \mathbb{R}^d$ is the input observation number $i$ in $d$ dimensional space and $y_i \in \lbrace -1,1 \rbrace$ is the output number $i$, which indicate the class membership \citep{Roemer}. SVM uses a hyperplane to separate the observations into classes.
+SVM aims to maximize the margin $\mathcal{M}$ to get the optimal result. In Figure~\ref{hyperplanes} observations are in 2-dimensional space which belongs to one of two classes. The observations can be separated by multiple hyperplanes, but the hyperplane that has the maximum distance between the observations and the optimal hyperplane is in Figure~\ref{maxHyperplane}. Figures are reproduced from \citep{SVM}.
+\begin{figure}[H]
+\begin{center}
+\minipage{0.4\textwidth}
+  \includegraphics[width=\linewidth]{images/hyperplanes}
+  \caption{The possible hyperplanes with its different distances from the observations, some hyperplanes are close to one observations of the classes.}
+  \label{hyperplanes}
+\endminipage
+\qquad
+\minipage{0.4\textwidth}
+  \includegraphics[width=\linewidth]{images/maxHyperplane}
+  \caption{The optimal hyperplane the one that has maximum distances between the classes, it shouldn't also biased to one side.}
+  \label{maxHyperplane}
+\endminipage
+\end{center}
+\end{figure}
+SVM has a low computational cost of evaluating the decision function, which is the function that used to classify the observations. SVM doesn't take all of the training examples into account, but a subset of it which is called support vectors \citep{Maimon}. The support vector is chosen to be the closest observations to the optimal hyperplane. In Figure~\ref{maxHyperplane} the filled shapes are referred to support vectors in that space. 
+\newpage
+\large{\textbf{Hyperplane Classifiers}}
+
+The objective of classification in SVM is to finds a function $f:\mathbb{R}^{N} \rightarrow \lbrace -1,+1 \rbrace$ by using the training observations according to the unknown probability distribution $P(x,y)$ of the observations $\lbrace (x_1,y_1),\ldots,(x_n,y_n) \rbrace \in \mathbb{R}^{N} \times Y, Y=\lbrace -1,+1 \rbrace$ such that $f$ will classify the coordinates of a new test observation $(x,y)$ correctly \citep{Maimon}.
+\begin{itemize}
+\item \textbf{The Linear Classifier}
+
+Let $\Omega$ be a linearly separable observations, the hyperplane will be defined as:
+\begin{align}
+\label{equ-3-1}
+w.x+b=0, \quad w \in \mathbb{R}^N , b \in \mathbb{R}
+\end{align}
+Which corresponds to:
+\begin{align}
+\label{equ-3-2}
+f(x) = \text{sign}((w.x)+b)
+\end{align}
+Where $w$ is the weight vector and $b$ is the bias and sign is either positive or negative. 
+
+The margin $\mathcal{M}$ is the largest distance between two parallel hyperplanes that separate the data into two classes. $\mathcal{M}$ is given by:
+\begin{align}
+\label{equ-3-3}
+\mathcal{M} = \frac{2}{||w||}
+\end{align}
+Note that the margin depends on the weight vector. Maximizing $\mathcal{M}$ is equivalent to minimizing $||w||$ value. A constraint to prevent observations from falling into the margin should be introduced. The problem becomes:
+\begin{align}
+\label{equ-3-4}
+&\min_{w,b}{\frac{1}{2}||w||^2}\\
+&\text{s.t. } y_i . ((w.x_i)+b) \geq 1, \quad i=1,\ldots,n
+\end{align}
+Since this problem is convex optimization, it can be solved using the Lagrange function \citep{Maimon} as follows:
+\begin{align}
+\label{equ-3-5}
+\mathcal{L}(w,b,\alpha) = \frac{1}{2} ||w||^2 - \sum_{i=1}^{n}\bigg( \alpha_i\big[ y_i((w.x_i)+b)-1 \big] \bigg) 
+\end{align}
+Where $\alpha_i$ is the Lagrange multiplier. And this has to be minimized with respect to primal variables $w,b$:
+
+\begin{align}
+\label{equ-3-6}
+\frac{\partial \mathcal{L}}{\partial w} &= w-\sum_{i=1}^{n}{\alpha_i y_i x_i} = 0 \rightarrow w = \sum_{i=1}^{n}{\alpha_i y_i x_i}\\
+\label{equ-3-7}
+\frac{\partial \mathcal{L}}{\partial b} &= \sum_{i=1}^{n}{\alpha_i y_i} = 0 
+\end{align}
+The value of $\alpha_i$ = 0 for all the constraints in Equation~\ref{equ-3-5}, which means the values of $\alpha_i$ can be eliminating from the equation without affecting the solution except for support vector (by using Karush-Kuhn-Tucker (KKT) conditions of optimization), thus:
+\begin{align}
+\label{equ-3-8}
+\alpha_i(y_i.((w.x_i)+b)-1) = 0, \quad i=1,\ldots,n
+\end{align} 
+% % % % % % % % % % % % % % % % % % % % % % % % % 
+The Lagrangian ($\mathcal{L}$) can also be maximized with respect to the dual variables $\alpha_i$. In fact, solving the dual problem may be easier than the primal problem; because they may have the same values under some conditions \citep{Maimon}. The dual problem can be obtained by substituting back~\ref{equ-3-6} and ~\ref{equ-3-7} value in Lagrangian function ~\ref{equ-3-5}: 
+\begin{align}
+\label{equ-3-9}
+\mathcal{L}=
+\frac{1}{2} \bigg[ \big( \sum_{i=1}^{n}{\alpha_i y_i x_i} \big) . \big( \sum_{j=1}^{n}{\alpha_j y_j x_j} \big) \bigg] 
+-
+\bigg[ 
+\big( \sum_{i=1}^{n}{\alpha_i y_i x_i} \big) . \big( \sum_{j=1}^{n}{\alpha_j y_j x_j} \big) \bigg] + \sum_{i=1}^{n}{y_i \alpha_i b} + \sum_{i=1}^{n}{\alpha_i} 
+\end{align}
+And from ~\ref{equ-3-7} the term $\sum_{i=1}^{n}{y_i \alpha_i b}$ is equal to 0. The first two terms differ by a factor, thus it becomes:
+\begin{align}
+\label{equ-3-10}
+\mathcal{L}=\sum_{i=1}^{n}{\alpha_i} - \frac{1}{2}
+\sum_{i=1}^{n}\sum_{j=1}^{n}{\alpha_i \alpha_j y_i y_j x_i x_j} \\
+\text{s.t. }
+\alpha_i \geq 0, i=1,\ldots,n, \sum_{i=1}^{n}{\alpha_i y_i} = 0 \notag
+\end{align}
+then the decision function in~\ref{equ-3-2} will be:
+\begin{align}
+\label{equ-3-11}
+f(x) = \text{sign}\bigg(\sum_{i=1}^{n} \alpha_i y_i (x.x_i)+b\bigg)
+\end{align}
+And by using ~\ref{equ-3-8} and the support vectors $x_i, i \in S=\{i:\alpha_i \neq 0\}$ the value of $b$ becomes:
+\begin{align}
+\label{equ-3-12}
+b=\frac{1}{S} \sum_{i\in S}\bigg(y_i - \sum_{j=1}^{n}\alpha_j y_j(x_i. x_j)\bigg)
+\end{align}
+% % % % % % % % % % % % % % % % % %
+\item \textbf{Kernel Function}
+
+When the observations are not linearly separable in the input space, they should be projected in higher dimension space, this makes the observations separable by using a hyperplane. The kernel function ($K$) is used to project the observations from the input space to higher feature space $F$, where feature space is non-linear mapping $K:\mathbb{R}^N \rightarrow \mathbb{R}^M$ where $M>N$ from the input space ~\citep{Maimon}. In this space a hyperplane can be used to separate the observations, then that hyperplane would be projected back in the input space, and it would have a non-linear curve. Figure~\ref{hyperplane-grayscale} illustrate the idea.
+\begin{figure}[H]
+\begin{center}
+  \includegraphics[scale=0.3]{images/hyperplane-grayscale}
+  \caption{Kernel function $K$ projected the observations from input space to feature space \citep{Hyperplane}.}
+  \label{hyperplane-grayscale}
+\end{center}
+\end{figure}
+The Kernel computes the inner product of the vectors without knowing the function $K$ on it self \citep{Thuso}. There are different choices of kernel function which gives a different classification accuracy. Some of them listed below:
+\begin{itemize}
+\renewcommand\labelitemii{$\bullet$}
+\item Linear: $K(x,x_i) = x^T x_i$
+\item Polynomial: $K(x,x_i) = {(\gamma x.x_i+C)}^d$
+\item Sigmoidal: $K(x,x_i) = tanh{(\gamma x^Tx_i+C)}$
+\item Gaussian Radial Base function (RBF): $K(x,x_i) = \exp \big( - \gamma||x-x_i||^2 \big)$
+where $\sigma \in \mathbb{R}$ is kernel parameter, and $||x-x_i||$ is the dissimilarity measure.
+\end{itemize}
+Where $C$ is the parameter that controls the influence of individual observations; It is also called smoothness parameter because it controls the trade-off between smooth decision boundary and classifying trading observations correctly \citep{OCSVM}.
+% % % % % % % % % % % % % % % % % % %
+\item \textbf{Non Separable SVM}
+
+Sometimes the observations may have high noise levels leading the classes to overlap. The previous case was for separable observations, so extending the capabilities of hyperplane classifier so the problem of noise can be solved. \citep{Maimon}.
+Equation~\ref{equ-3-4} can be extended by introducing the slack variables $\xi_i$ which allow the training data to violate the constraint in Equation~\ref{equ-3-5}.
+A soft classifier is used in the non separable case, and controls the classifier capacity and the sum of the slacks $\sum_{i=1}^{n} \xi_i$, the soft classifier minimizes the following function:
+\vspace{-4mm}
+\begin{align}
+\label{equ-3-13}
+&\min_{w,b}\frac{1}{2}||w||^2 + C \sum_{i=1}^{n}{\xi_i} \\
+&\text{s.t. } \xi_i \geq 0, y_i(w x_i +b) \geq 1-\xi_i \quad \forall i. \notag
+\end{align}
+The value of $\xi_i$ can be one of three options, $\xi_i = 0$, then $x_i$ on the right side of the margin. $0< \xi_i <1$, then $x_i$ on the right side of the margin but its distance is less than the margin $\mathcal{M}$. $\xi_i > 1$, then $\xi_i$ is on the wrong side \citep{Thuso}.
+The difference between the separable and the non-separable case is the upper bound $C$ on the Lagrange multipliers $\alpha_i$, where $C > 0$ is the regularization constant that determines the balance between the empirical risk and the complexity term \citep{Maimon}. The Lagrange function becomes:
+\begin{align}
+\label{equ-3-14}
+\mathcal{L}(w,b,\xi_i) = \frac{1}{2} ||w||^2
+ + C \sum_{i=1}^{n}{\xi_i} - \sum_{i=1}^{n}{\alpha_i \lbrace y_i (w x_i + b) - (1-\xi_i) \rbrace} - \sum_{i=1}^{n}{\beta_i \xi_i}
+ \end{align}
+And this has to be minimized with respect to variables $w,b,\xi_i$:
+\begin{align}
+\notag
+\mathcal{L} &= \frac{1}{2} w.w + C \sum_{i=1}^{n}{\xi_i} - \sum_{i=1}^{n}(\alpha_i y_i w x_i + \alpha_i y_i b - \alpha_i + \alpha_i \xi_i) - \sum_{i=1}^{n} \beta_i \xi_i \\
+\label{equ-3-15}
+\frac{\partial \mathcal{L}}{\partial w} &= w - \sum_{i=1}^{n} \alpha_i y_i x_i = 0 \rightarrow w = \sum_{i=1}^{n} \alpha_i y_i x_i \\
+\label{equ-3-16}
+\frac{\partial \mathcal{L}}{\partial b} &= \sum_{i=1}^{n} \alpha_i y_i = 0\\
+\label{equ-3-17}
+\frac{\partial \mathcal{L}}{\partial \xi_i} &= C - \alpha_i - \beta_i = 0 \rightarrow \beta_i = C - \alpha_i \quad \forall i.
+\end{align}
+By using Karush-Kuhn-Tucker (KKT) conditions of optimization to minimize $\mathcal{L}$, which include the Equations ~\ref{equ-3-15}, ~\ref{equ-3-16}, ~\ref{equ-3-17} and:
+\begin{align}
+\label{equ-3-18}
+\alpha_i (y_i (w x_i +b) - (1-\xi_i)) = 0 \\
+\label{equ-3-19}
+y_i(w x_i +b) - (1-\xi_i) \geq 0 \\
+\label{equ-3-20}
+\beta_i \xi_i = 0
+\end{align}
+Now by using Equation ~\ref{equ-3-17}, ~\ref{equ-3-18}, ~\ref{equ-3-19} and ~\ref{equ-3-19} the following values obtained:
+\begin{align}
+\notag
+\alpha_i = 0 \rightarrow y_i(w x_i+b) \geq 1 \\
+\notag
+\alpha_i = C \rightarrow y_i(w x_i+b) \leq 1 \\
+\notag
+0<\alpha_i<C \rightarrow y_i(w x_i+b)=1 \notag
+\end{align}
+Now by substituting back in Equation ~\ref{equ-3-14}:
+\begin{align}
+\label{equ-3-21}
+\mathcal{L} = \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n} \alpha_i \alpha_j y_i y_j + C \sum_{i=1}^{n}{\xi_i} - \sum_{i=1}^{n}{\alpha_i y_i} \sum_{j=1}^{n}{\lbrace \alpha_j y_j x_j \rbrace}.x_i - b \sum_{i=1}^{n}{\alpha_i y_i} \\ + \sum_{i=1}^{n}{\alpha_i (1-\xi_i)} - \sum_{i=1}^{n}{(C-\alpha_i)\xi_i}\notag
+\\
+\label{equ-3-22}
+= \sum_{i=1}^{n} \alpha_i - \frac{1}{2} \sum_{i=1}^{n}\sum_{j=1}^{n}{\alpha_i \alpha_j y_i y_j x_i. x_j}
+\end{align}
+Now to extend this classifier from input space $\mathbb{R}^N$ to higher dimensional space (feature space $F$), the polynomial kernel function can be used, thus the Lagrange function becomes:
+\begin{align}
+\label{equ-3-23}
+\mathcal{L} = \sum_{i=1}^{n} \alpha_i - \frac{1}{2}\sum_{i=1}^{n}\sum_{j=1}^{n}{\alpha_i \alpha_j y_i y_j (\phi(x_i)). (\phi(x_j))}
+\end{align}
+\end{itemize}
+\section{One Class Support Vector Machine} \label{OCSVM}
+The aim of  One Class Support Vector Machine (OCSVM) method is to test if the new data belongs to a defined class or not, unlike previous classifiers where the methods distinguish between classes \citep{Roemer}. The algorithm represent the observations as points in space, mapped to form separable hyperplane. It uses the origin as the only member of the second class. And it separates the image of the one class from the origin. % \citep{Larry}. %
+
+In Figure~\ref{OSVM1} the normal observations have been labelled by value $+1$, while the outliers are labelled by value $-1$.
+
+\begin{figure}[H]
+\begin{center}
+\minipage{0.35\textwidth}
+  \includegraphics[width=\linewidth]{images/OCSVM}
+\endminipage
+\end{center}
+  \caption{One class SVM, whereby the hyperplane separates the normal observations class 1 from anything else (outliers) class -1.}
+  \label{OSVM1}
+\end{figure}
+
+\textbf{One-Class SVM algorithm:}
+The function in this algorithm returns +1 in the small region which is the training data points and -1 elsewhere. The quadratic minimization function is different to the SVM quadratic minimization problem \citep{Scholkopf}:
+\begin{align}
+&\min_{w,\xi_i,\rho}{\frac{1}{2}||w||^2 + \frac{1}{\nu n} \sum_{i=1}^{n}\xi_i - \rho} \\
+&\notag \text{s.t. } (w.\phi(x_i)) \geq \rho - \xi_i, \forall i=1,\ldots,n \\ 
+&\notag \xi_i \geq 0, \forall i=1,\ldots,n 
+\end{align}
+The distance to the origin in feature space is presented by $\rho$. The variable $w$ is the parametrization of the hyperplane to separate the origin from the observations. In the previous formulation $C$ was the smoothness parameter. In this formula $\nu$ is the smoothness parameter which is the proportion of outliers expected in the data, and it characterizes the solution \citep{OCSVM}:
+\begin{itemize}
+\item It sets the upper bound on the fractions of outliers;
+\item It is the lower bound on the number of training examples used as support-vector \citep{Scholkopf}.
+\end{itemize}
+So it is still a quadratic problem, and by using Lagrange multipliers, the decision function becomes:
+$$
+f(x) = \text{sign}((w.\phi(x_i)) - \rho) = \text{sign}(\sum_{i=1}^{n} \alpha_i K(x,x_i) - \rho)
+$$
+
+Another method for OCSVM is referred as Tax and Duin method \citep{David}.
+% % % % % % % % % % % % % % % % % % % % %
+\begin{comment}
+\textbf{One-Class SVM according to Tax and Duin:}
+This function creates a hypersphere around the observations in feature space instead of planar, minimizing hypersphere is minimized the effect of outliers in the solution.
+The equation in this case require all the distances between the observation $x_i$ to the centre is strict less than $R$ where $R$ is the radius of the hypersphere which is the distance from any support vector to the boundary, slack variables $\xi_i$ and parameter $C$ are also used to create a soft margin \citep{David}.
+$$
+\min_{R,a} R^2 + C \sum_{i=1}^{n}\xi_i
+$$
+s.t.
+$$
+||x_i - a||^2 \leq R^2 + \xi_i, \forall i=1,\cdots,n
+$$
+$$
+\xi_i \geq 0, \forall i=1,\cdots,n
+$$
+The result is characterized by:
+$a$ is a linear combination of the support vectors(for the training observations for which \textit{Lagrange multiplier} is non-zero) and $R$ where $R>0$. The \textit{Lagrange multipliers} and \textit{Gaussian kernel} produce:
+$$
+||z-x||^2 = \sum_{i=1}^{n}\alpha_i \exp(\frac{-||z-x_i||^2}{\sigma^2}) \geq -R^2 \setminus 2 + C_R
+$$
+A new observation $z$ obtained, and it can be used to test if it is in the class and this happens when the distance to the centre is smaller than or equal to the radius \citep{David}.
+
+There is also Multi-Class SVM which is an extension to two class problem, SVM also can be applied in the regression problems. SVM mainly used in supervised learning, however, it can also be applied in unsupervised learning. To conclude, the performance of SVM basically depends on the kernel function and the kernel parameters, they are the factors that determined the complexity and the accuracy of the model \citep{Maimon}.
+\end{comment}

@@ -1,0 +1,206 @@
+\begin{thebibliography}{34}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[AUC(Accessed May 2017)]{AUC}
+Receiver operating characteristic (roc), Accessed May 2017.
+\newblock URL
+  \url{http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html}.
+
+\bibitem[AUR(Accessed May 2017)]{AUROC}
+What does auc stand for and what is it?, Accessed May 2017.
+\newblock URL
+  \url{https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it}.
+
+\bibitem[Con(Accessed May 2017)]{Confusion}
+What is a confusion matrix in machine learning?, Accessed May 2017.
+\newblock URL
+  \url{http://machinelearningmastery.com/confusion-matrix-machine-learning/}.
+
+\bibitem[Hyp(Accessed May 2017)]{Hyperplane}
+What is the relation between the number of support vectors and training data
+  and classifiers performance?, Accessed May 2017.
+\newblock URL
+  \url{http://stackoverflow.com/questions/9480605/what-is-the-relation-between-the-number-of-support-vectors-and-training-data-and}.
+
+\bibitem[OCS(Accessed May 2017)]{OCSVM}
+Unsupervised machine learning with one-class support vector machines, Accessed
+  May 2017.
+\newblock URL
+  \url{https://thisdata.com/blog/unsupervised-machine-learning-with-one-class-support-vector-machines/}.
+
+\bibitem[RBF(Accessed May 2017)]{RBFkernel}
+Why does rbf kernel generally outperforms linear or polynomial kernels?,
+  Accessed May 2017.
+\newblock URL
+  \url{https://www.quora.com/Why-does-RBF-kernel-generally-outperforms-linear-or-polynomial-kernels}.
+
+\bibitem[ROC(Accessed May 2017)]{ROC}
+Drawing roc curve, Accessed May 2017.
+\newblock URL
+  \url{https://docs.eyesopen.com/toolkits/cookbook/python/plotting/roc.html}.
+
+\bibitem[SVM(Accessed May 2017)]{SVM}
+Introduction to support vector machines.
+\newblock
+  \url{http://docs.opencv.org/2.4/doc/tutorials/ml/introduction_to_svm/introduction_to_svm.html},
+  Accessed May 2017.
+
+\bibitem[Anomlay()]{Anomlay}
+Anomlay.
+\newblock Anomaly detection.
+\newblock Wikipedia, the Free Encyclopedia,
+  \url{https://en.wikipedia.org/wiki/Anomaly_detection}, Accessed April 2017.
+
+\bibitem[Arcolano and Rudoy(2008)]{Nicholas}
+N.~Arcolano and D.~Rudoy.
+\newblock One class support vector machines methods and applications.
+\newblock School of Engineering presentation, 2008.
+\newblock URL
+  \url{http://www.dainf.ct.utfpr.edu.br/~kaestner/Mineracao/ArquivosExtras2016/Dan.Nick-OneClassSVM.pdf}.
+
+\bibitem[Barnett and Lewis(1994)]{Barnett}
+V.~Barnett and T.~Lewis.
+\newblock \emph{Outliers in statistical data}.
+\newblock Number 0-471-93094-6. John Wiley, 1994.
+
+\bibitem[Breunig et~al.(2000)Breunig, Kriegel, Ng, and Sander]{Markus}
+M.~M. Breunig, H.-P. Kriegel, R.~T. Ng, and J.~Sander.
+\newblock {LOF} identifying density based local outliers.
+\newblock 2000.
+
+\bibitem[Chandola et~al.(2009)Chandola, Banerjee, and Kumar]{Survey}
+V.~Chandola, A.~Banerjee, and V.~Kumar.
+\newblock Anomaly detection: A survey, 2009.
+\newblock URL
+  \url{https://www.vs.inf.ethz.ch/edu/HS2011/CPS/papers/chandola09_anomaly-detection-survey.pdf}.
+
+\bibitem[Cui(2005)]{Hongyin}
+H.~Cui.
+\newblock Online outlier detection over data streams, 2005.
+
+\bibitem[Goldstein~M(2016)]{Goldstein}
+U.~S. Goldstein~M.
+\newblock A comparative evaluation of unsupervised anomaly detection algorithms
+  for multivariate data.
+\newblock \emph{PLoS ONE 11(4): e0152173}, 2016.
+\newblock URL \url{https://doi.org/10.1371/journal.pone.0152173}.
+
+\bibitem[Knorr(2002)]{Edwin}
+E.~M. Knorr.
+\newblock \emph{Outliers and Data Mining: Finding Exceptions in Data}.
+\newblock PhD thesis, The university of British Columbia, Department of
+  Computer Science, 2002.
+
+\bibitem[Knox and Ng(1998)]{Knorr}
+E.~M. Knox and R.~T. Ng.
+\newblock Algorithms for mining distance based outliers in large datasets.
+\newblock pages 392--403, 1998.
+
+\bibitem[LOF()]{LOF}
+LOF.
+\newblock Local outlier factor.
+\newblock Wikipedia, the Free Encyclopedia,
+  \url{https://en.wikipedia.org/wiki/Local_outlier_factor}, Accessed April
+  2017.
+
+\bibitem[Malak~Alshawabkeh(2010)]{Malak}
+D.~K. Malak~Alshawabkeh, Byunghyun~Jang.
+\newblock Accelerating the local outlier factor algorithm on a gpu for
+  intrusion detection systems, 2010.
+
+\bibitem[Mathew X.~Ma and Liu(2016)]{Mathew}
+H.~Y.~N. Mathew X.~Ma and W.~Liu.
+\newblock Density-based outlier detection by local outlier factor on
+  large-scale traffic data, 2016.
+\newblock URL
+  \url{http://www.ingentaconnect.com/contentone/ist/ei/2016/00002016/00000014/art00003?crawler=true}.
+
+\bibitem[Modise(2014)]{Thuso}
+T.~B. Modise.
+\newblock A basic introduction to machine learning, 2014.
+\newblock African Institute for Mathematical Sciences, South Africa, 2014.
+
+\bibitem[MR~Tight and Clark(1993)]{Clark}
+S.~W. MR~Tight, EJ~Redfern and S.~Clark.
+\newblock Outlier detection and missing value estimation in time series traffic
+  count data: Final report of serc project gr/g23180, 1993.
+\newblock URL
+  \url{http://eprints.whiterose.ac.uk/2174/1/ITS295_WP401_uploadable.pdf}.
+
+\bibitem[na and Lozano(2005)]{Edgar}
+E.~A. na and E.~Lozano.
+\newblock Parallel algorithms for distance-based and density-based outliers.
+\newblock 2005.
+
+\bibitem[Ng(2017)]{Andrew}
+A.~Ng.
+\newblock Lecture notes in machine leanring, coursera site, 2017.
+\newblock URL
+  \url{https://www.coursera.org/learn/machine-learning/supplement/d5Pt1/lecture-slides}.
+
+\bibitem[NIST(2003)]{NIST}
+NIST.
+\newblock \emph{Engineering statistics}.
+\newblock NIST is an agency of the U.S. Department of Commerce, 2003.
+\newblock URL
+  \url{http://www.itl.nist.gov/div898/handbook/eda/section3/eda35h.htm}.
+
+\bibitem[Oded~Maimon(2010)]{Maimon}
+L.~R. Oded~Maimon.
+\newblock \emph{Data Mining and Knowledge Discovery Handbook}.
+\newblock Number 978-0-387-24435-8. Springer New York Dordrecht Heidelberg
+  London, 2010.
+
+\bibitem[Outlier()]{Outlier}
+Outlier.
+\newblock Outlier.
+\newblock Wikipedia, the Free Encyclopedia,
+  \url{https://en.wikipedia.org/wiki/Outlier}, Accessed April 2017.
+
+\bibitem[Scholkopf et~al.(1998)Scholkopf, Williamson, Smola, Shawe-Taylor, and
+  Platt]{Scholkopf}
+B.~Scholkopf, R.~Williamson, A.~Smola, J.~Shawe-Taylor, and J.~Platt.
+\newblock \emph{Support Vector Method for Novelty Detection}.
+\newblock Number 0-262-11245-0. MIT Press, 1998.
+
+\bibitem[SCM()]{SCM}
+SCM.
+\newblock Support vector machine.
+\newblock Wikipedia, the Free Encyclopedia,
+  \url{https://en.wikipedia.org/wiki/Support_vector_machine}, Accessed April
+  2017.
+
+\bibitem[Seo(2006)]{Songwon}
+S.~Seo.
+\newblock A review and comparison of methods for detecting outliers in
+  univariate data sets, 2006.
+
+\bibitem[Silvia~Cateni and Vannucci(2008)]{Silvia}
+V.~C. Silvia~Cateni and M.~Vannucci.
+\newblock \emph{Outlier Detection Methods for Industrial Applications, Advances
+  in Robotics, Automation and Control}.
+\newblock Number 78-953-7619-16-9. In Tech Open Access Publisher, 2008.
+
+\bibitem[Singh and Upadhyaya(2012)]{Kurukshetra}
+K.~Singh and D.~S. Upadhyaya.
+\newblock Outlier detection applications and techniques.
+\newblock \emph{IJCSI International Journal of Computer Science Issues, Vol. 9,
+  Issue 1, No 3}, 2012.
+
+\bibitem[Tax and Duin(2004)]{David}
+D.~M. Tax and R.~P. Duin.
+\newblock Support vector data description.
+\newblock \emph{Kluwer Academic Publishers-Plenum Publishers}, 2004.
+
+\bibitem[Vlasveld(Accessed April 2017)]{Roemer}
+R.~Vlasveld.
+\newblock Introduction to one-class support vector machines, Accessed April
+  2017.
+\newblock URL
+  \url{http://rvlasveld.github.io/blog/2013/07/12/introduction-to-one-class-support-vector-machines/}.
+
+\end{thebibliography}

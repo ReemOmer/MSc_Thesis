@@ -1,0 +1,388 @@
+ 53.
+
+Package natbib Warning: Citation `Survey' on page 1 undefined on input line 2.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 1 undefined on input line 3.
+
+
+Package natbib Warning: Citation `Clark' on page 1 undefined on input line 4.
+
+
+Package natbib Warning: Citation `Knorr' on page 1 undefined on input line 4.
+
+
+Package natbib Warning: Citation `Silvia' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Reference `Local_Outlier_Factor' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Reference `Support_Vector_Machine' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Reference `Experiment' on page 1 undefined on input line 4.
+
+
+LaTeX Warning: Reference `Conclusion' on page 1 undefined on input line 6.
+
+
+Package natbib Warning: Citation `Barnett' on page 1 undefined on input line 10.
+
+
+LaTeX Warning: Reference `outlier' on page 1 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 1 undefined on input line 14.
+
+
+Package natbib Warning: Citation `Outlier' on page 2 undefined on input line 36.
+
+
+Package natbib Warning: Citation `Outlier' on page 2 undefined on input line 41.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 2 undefined on input line 43.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 2 undefined on input line 45.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 2 undefined on input line 49.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 2 undefined on input line 63.
+
+
+Package natbib Warning: Citation `Survey' on page 2 undefined on input line 67.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 2 undefined on input line 72.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 3 undefined on input line 74.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 3 undefined on input line 76.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 3 undefined on input line 83.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 3 undefined on input line 85.
+
+
+Package natbib Warning: Citation `Songwon' on page 3 undefined on input line 95.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 3 undefined on input line 105.
+
+
+Package natbib Warning: Citation `Survey' on page 3 undefined on input line 107.
+
+
+Package natbib Warning: Citation `Kurukshetra' on page 4 undefined on input line 110.
+
+
+Package natbib Warning: Citation `Survey' on page 4 undefined on input line 110.
+
+
+Package natbib Warning: Citation `Andrew' on page 4 undefined on input line 114.
+
+
+LaTeX Warning: Reference `ML-OutlierDetection' on page 4 undefined on input line 127.
+
+
+Package natbib Warning: Citation `Goldstein' on page 4 undefined on input line 132.
+
+
+Package natbib Warning: Citation `Goldstein' on page 4 undefined on input line 132.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+ 54.
+
+Package natbib Warning: Citation `Silvia' on page 6 undefined on input line 2.
+
+
+Package natbib Warning: Citation `Markus' on page 6 undefined on input line 2.
+
+
+Package natbib Warning: Citation `LOF' on page 6 undefined on input line 2.
+
+
+LaTeX Warning: Reference `LOF-MD2' on page 6 undefined on input line 2.
+
+
+Package natbib Warning: Citation `LOF' on page 6 undefined on input line 6.
+
+
+Package natbib Warning: Citation `LOF' on page 6 undefined on input line 6.
+
+
+Package natbib Warning: Citation `Markus' on page 6 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Knorr' on page 6 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Markus' on page 6 undefined on input line 12.
+
+
+Package natbib Warning: Citation `Markus' on page 6 undefined on input line 22.
+
+
+Package natbib Warning: Citation `Markus' on page 6 undefined on input line 25.
+
+
+Package natbib Warning: Citation `LOF' on page 7 undefined on input line 32.
+
+
+Package natbib Warning: Citation `Markus' on page 7 undefined on input line 37.
+
+
+Package natbib Warning: Citation `Mathew' on page 7 undefined on input line 37.
+
+
+Package natbib Warning: Citation `LOF' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `reach_dist' on page 7 undefined on input line 45.
+
+
+Package natbib Warning: Citation `LOF' on page 7 undefined on input line 49.
+
+
+Package natbib Warning: Citation `LOF' on page 7 undefined on input line 49.
+
+
+Package natbib Warning: Citation `Markus' on page 7 undefined on input line 53.
+
+
+Package natbib Warning: Citation `Hongyin' on page 7 undefined on input line 56.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 56.
+
+
+Package natbib Warning: Citation `Markus' on page 7 undefined on input line 56.
+
+
+LaTeX Warning: Reference `lem1' on page 7 undefined on input line 64.
+
+
+Package natbib Warning: Citation `Markus' on page 7 undefined on input line 64.
+
+
+Package natbib Warning: Citation `Markus' on page 8 undefined on input line 67.
+
+
+LaTeX Warning: Reference `lem1' on page 8 undefined on input line 85.
+
+
+LaTeX Warning: Reference `thm1' on page 8 undefined on input line 85.
+
+
+Package natbib Warning: Citation `Markus' on page 8 undefined on input line 85.
+
+
+LaTeX Warning: Reference `thm1' on page 8 undefined on input line 104.
+
+
+LaTeX Warning: Reference `lem1' on page 8 undefined on input line 104.
+
+
+LaTeX Warning: Reference `lem1' on page 8 undefined on input line 104.
+
+
+Package natbib Warning: Citation `Markus' on page 8 undefined on input line 104.
+
+
+Package natbib Warning: Citation `Markus' on page 8 undefined on input line 111.
+
+
+Package natbib Warning: Citation `Markus' on page 9 undefined on input line 112.
+
+
+Package natbib Warning: Citation `Malak' on page 9 undefined on input line 115.
+
+
+LaTeX Warning: Reference `LOFstep' on page 9 undefined on input line 115.
+
+ 55.
+
+Package natbib Warning: Citation `Silvia' on page 10 undefined on input line 2.
+
+
+Package natbib Warning: Citation `Maimon' on page 10 undefined on input line 2.
+
+
+Package natbib Warning: Citation `Roemer' on page 10 undefined on input line 4.
+
+
+Package natbib Warning: Citation `Maimon' on page 10 undefined on input line 4.
+
+
+LaTeX Warning: Reference `hyperplanes' on page 10 undefined on input line 4.
+
+
+LaTeX Warning: Reference `maxHyperplane' on page 10 undefined on input line 4.
+
+
+Package natbib Warning: Citation `SVM' on page 10 undefined on input line 4.
+
+
+Package natbib Warning: Citation `Maimon' on page 10 undefined on input line 20.
+
+
+LaTeX Warning: Reference `maxHyperplane' on page 10 undefined on input line 20.
+
+
+Package natbib Warning: Citation `Maimon' on page 10 undefined on input line 25.
+
+
+Package natbib Warning: Citation `Maimon' on page 11 undefined on input line 50.
+
+
+
+LaTeX Warning: Reference `equ-3-5' on page 11 undefined on input line 62.
+
+
+Package natbib Warning: Citation `Maimon' on page 11 undefined on input line 68.
+
+
+LaTeX Warning: Reference `equ-3-7' on page 11 undefined on input line 68.
+
+
+LaTeX Warning: Reference `equ-3-8' on page 11 undefined on input line 68.
+
+
+LaTeX Warning: Reference `equ-3-6' on page 11 undefined on input line 68.
+
+
+LaTeX Warning: Reference `equ-3-6' on page 11 undefined on input line 77.
+
+
+LaTeX Warning: Reference `equ-3-2' on page 11 undefined on input line 85.
+
+
+LaTeX Warning: Reference `equ-3-8' on page 12 undefined on input line 90.
+
+
+Package natbib Warning: Citation `Maimon' on page 12 undefined on input line 98.
+
+
+LaTeX Warning: Reference `hyperplane-grayscale' on page 12 undefined on input line 98.
+
+
+Package natbib Warning: Citation `Thuso' on page 12 undefined on input line 108.
+
+
+Package natbib Warning: Citation `Roemer' on page 12 undefined on input line 108.
+
+
+Package natbib Warning: Citation `Maimon' on page 13 undefined on input line 123.
+
+
+LaTeX Warning: Reference `equ-3-5' on page 13 undefined on input line 124.
+
+
+Package natbib Warning: Citation `Thuso' on page 13 undefined on input line 131.
+
+
+Package natbib Warning: Citation `Maimon' on page 13 undefined on input line 132.
+
+
+LaTeX Warning: Reference `equ-3-15' on page 13 undefined on input line 149.
+
+
+LaTeX Warning: Reference `equ-3-16' on page 13 undefined on input line 149.
+
+
+LaTeX Warning: Reference `equ-3-17' on page 13 undefined on input line 149.
+
+
+LaTeX Warning: Reference `equ-3-17' on page 13 undefined on input line 158.
+
+
+LaTeX Warning: Reference `equ-3-18' on page 13 undefined on input line 158.
+
+
+LaTeX Warning: Reference `equ-3-19' on page 13 undefined on input line 158.
+
+
+LaTeX Warning: Reference `equ-3-19' on page 13 undefined on input line 158.
+
+
+LaTeX Warning: Reference `equ-3-14' on page 14 undefined on input line 167.
+
+
+Package natbib Warning: Citation `Roemer' on page 14 undefined on input line 183.
+
+
+LaTeX Warning: Reference `OSVM1' on page 14 undefined on input line 193.
+
+
+Package natbib Warning: Citation `Scholkopf' on page 14 undefined on input line 197.
+
+
+Package natbib Warning: Citation `Scholkopf' on page 15 undefined on input line 211.
+
+
+Package natbib Warning: Citation `David' on page 15 undefined on input line 218.
+
+ 56.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

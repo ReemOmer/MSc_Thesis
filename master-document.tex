@@ -1,0 +1,149 @@
+\documentclass{aimsessay}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[round]{natbib}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{latexsym}
+\usepackage{parskip}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{hyperref}
+\usepackage[table]{colortbl}
+% algorithm % % % %
+\usepackage{algpseudocode}
+\usepackage{algorithm}
+\makeatletter
+\newcommand{\algrule}[1][.2pt]{\par\vskip.5\baselineskip\hrule height #1\par\vskip.5\baselineskip}
+\makeatother
+% input and output of algorithms 
+\usepackage{tikz}
+\newcommand\tikzmark[1]{%
+  \tikz[remember picture,overlay]\node[inner sep=2pt] (#1) {};}
+\newcommand\DrawBox[3][]{%
+\tikz[remember picture,overlay]\draw[#1] ([xshift=-3.5em,yshift=7pt]#2.north west) rectangle (#3.south east);}
+\algnewcommand\algorithmicinput{\textbf{Input:}}
+\algnewcommand\INPUT{\item[\algorithmicinput]}
+\algnewcommand\algorithmicoutput{\textbf{Output:}}
+\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+\algnewcommand\algorithmicassume{\textbf{ASSUME:}}
+\algnewcommand\ASSUME{\item[\algorithmicassume]}
+% % % % % % % % % % % % % % %
+% % % % % define properties % % % % %
+%\theoremstyle{definition}
+%\newtheorem{mydef}{\left( Property}
+%\usepackage{enumitem}
+%\newlist{Properties}{enumerate}{2}
+%\setlist[Properties]{label=Property %\arabic*.,itemindent=*}
+% % % % % % define lemma % % % % %
+%\theoremstyle{definition}
+%\newtheorem{lemma}{Lemma}
+% % % % % % % %
+%\theoremstyle{definition}
+% % % % % % % % % % % % % % % % %
+\makeatletter\def\thm@space@setup{%
+  \thm@preskip=1.2\parskip \thm@postskip=0pt
+  }
+\renewenvironment{proof}[1][\proofname]{\par
+  \vspace{-\topsep}
+  \pushQED{\qed}
+  \normalfont
+  \topsep0pt \partopsep0pt 
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+  \addvspace{6pt plus 6pt} 
+}
+\makeatother
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{booktabs} 
+\usepackage{array}
+%add footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \hrule width \textwidth height 1pt
+  \kern 2pt
+}
+%add footer
+\usepackage[below,section]{placeins}
+\usepackage{float}
+\usepackage{moreverb} 
+\swapnumbers 
+% 
+% Theorems are in italics.
+\theoremstyle{plain}
+\newtheorem{thm}[subsection]{Theorem}
+%
+% Rest is not in italics.
+\theoremstyle{definition} 
+\newtheorem{lem}[subsection]{Lemma}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{conj}[subsection]{Conjecture}
+\newtheorem{pro}[subsection]{Proposition}
+\newtheorem{exa}[subsection]{Example}
+\newtheorem{defn}[subsection]{Definition}
+\newtheorem{rem}[subsection]{Remark}
+% 
+% If you have no theorems, but a lot of equations, maybe the
+% following two lines are good. Beware of corresponding Equation
+% and Example numbers though! Number equations by sections.
+% 
+\numberwithin{equation}{section}
+%-----------------------------------------------------------------------------
+\title{Detecting Outliers in Datasets Using Machine Learning}
+\author{Reem Omer Mohammed Elmahdi (reemomer@aims.ac.za)\\
+% Then in the MAIN BODY use this:                  
+\begin{RLtext}
+ريم عمر محمد المهدي 
+\end{RLtext}\\
+African Institute for Mathematical Sciences (AIMS)\\ \\
+{\small Supervised by: Dr. Michelle Lochner}\\
+{\small African Institute for Mathematical Sciences - Research Centre, South Africa}%
+}
+\date{{\small 18 May 2017}\\%
+  {\scriptsize\it Submitted in partial fulfillment of 
+    a structured masters degree at AIMS South Africa}\\%
+  \vspace{0.5cm}{\includegraphics{images/AIMS_SA_Logo.pdf}}}
+%-------------------------------------------------------------------------
+\begin{document}
+\pagestyle{empty}
+\maketitle
+%-------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
+\pagenumbering{roman}
+\input{abstract}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+%-----------------------------------------------------------------------------
+\input{chapter1}
+\input{chapter2}
+\input{chapter3}
+\input{chapter4}
+\input{chapter5}
+%-----------------------------------------------------------------------------
+\renewcommand{\bibname}{References}
+\nocite{*}
+\bibliographystyle{abbrvnat}
+\bibliography{references}
+\addcontentsline{toc}{chapter}{References}
+%-----------------------------------------------------------------------------
+\end{document}

@@ -1,0 +1,129 @@
+\chapter{Introduction}
+\textit{Outlier detection} is the process of finding patterns in data that do not adjust to normal/expected behavior. These patterns are known as \textit{outliers} or \textit{anomalies}\citep{Survey}. Detection of outliers has been interested in various domains such as fraud detection for credit card and insurance, intrusion detection for cyber security and industrial damage detection.
+It is important to detect the outliers in data because they can be translated into actionable information in various applications. In fact, there are different outliers detection techniques that have been developed for specific domains. These techniques can operate in supervised learning, semi-supervised learning and unsupervised learning \citep{Kurukshetra}. Outlier detection is linked to noise removal, noise accommodation, and novelty detection\citep{Kurukshetra}. Noise can be defined as unwanted data that interrupt data analysis process. Noise removal is the process of removing noise data before analysis. Noise accommodation is the process of preventing the estimated statistical model against anomalous perception. Novelty detection is detecting unobserved patterns in the data. This research attempts to compare two outlier detection models \citep{Silvia}: one class Support Vector Machine and Local Outlier Factor. More details can be found on the next few pages. Additionally, the focus falls on the efficiency of the models, and the research will help to understand credit card fraudulent transactions behavior which is outliers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Defining Outliers}
+An outlier is an observation (or subset of observations) which appears to be
+inconsistent with the remainder of the data set \citep{Barnett}. Fig.~\ref{outlier} illustrates outliers in a 2-dimensional data set. Clearly, $o_1,o_2$ and $O_3$ are the points that are far from other points $N_1$ and $N_2$ which contains most of the data.
+\begin{figure}[!h]
+\centering 
+\includegraphics[width=0.5\textwidth]{images/outlier_1}
+\caption{Observations in 2-dimensional space\citep{Kurukshetra}.}
+\label{outlier} 
+\end{figure}
+\begin{comment}
+\begin{figure}[!htb]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{images/O1-1}
+  \caption{A really Awesome Image}\label{fig:awesome_image1}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth,height =4.5cm]{images/O2}
+  \caption{A really Awesome Image}\label{fig:awesome_image2}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth,height =4.5cm]{images/O3}
+  \caption{A really Awesome Image}\label{fig:awesome_image3}
+\endminipage
+\end{figure}
+\end{comment}
+
+Outliers are considered as errors or noise in data sets. Researchers may either reject or delete outliers in the datasets% \citep{Outlier}%
+, however, sometimes outliers indicate something scientifically interesting so it may be useful. %\citep{NIST} %
+
+Outliers may appear in datasets because of manual errors such as transmission or transcription, changes in the behavior of the system or through deviations in populations. Alternatively, outliers could be a result of a flaw in the theory. Outliers may cause a negative effect on data analyses, so it is very important to define them \citep{Outlier}.
+
+\textbf{Types of Outliers}
+Outliers can be classified into three categories:
+\begin{itemize}
+\item{Point Outliers:} this is the simplest type of outlier. An outlier is a point outlier when an individual or a group of data patterns can be considered as unusual as for the rest of data \citep{Outlier}.
+\item{Contextual Outliers:} 
+these are outliers found when observations are unusual in a specific context and are caused by the structure in the dataset. An observation might be an outlier in a certain context, but normal in different context \citep{Kurukshetra}. There are two sets of attributes that define data patterns: contextual attributes and behavioral attributes.
+\item{Collective Outliers:} 
+collected data patterns which are unusual in the dataset. An individual data point in the collective outlier may not be an outlier by itself, in fact, the occurrence of the data points together is unusual. Point outliers can appear in any data set, whereas collective outliers appear only in datasets where the data patterns are related \citep{Kurukshetra}.
+\end{itemize}
+
+\section{Outlier Detection}
+Most of the work done in this section has been taken from \citep{Kurukshetra}, and there are more details there.
+
+Outliers Detection is the identification of items, events or observations which do not conform to expected patterns or other items in a dataset.
+%\citep{Anomlay} %
+There are many reasons that make detecting outliers challenging. First of all the encompassing of all normal behavior in the region, secondly, the uncertainty of boundary between normal and outlier behavior and in addition to that, the unavailability of labeled data to apply in training and validation of the model. Furthermore, the similarity between actual outliers and data. %\citep{Kurukshetra} %
+It is difficult to apply a developed technique in one domain to another because the problem formulation of outlier detection is different. 
+%Problem formulation of one domain is different than others, and this results in difficulty of  
+%The difficulty of applying a developed technique in one domain to another, due to the formulation of the %problem which is determined by these factors, the nature of input data, the type of outlier, data labels $and the output of outlier detection %\citep{Kurukshetra} %. 
+%
+%Therefore most of the existing outlier detection techniques solve a specific problem formulation because %these factors that solve the outlier detection problem in its general form is not simple. Similarly, the %nature of the data, the type of outlier, etc. are also factors that restrict the broad solution. 
+%\textbf{Problem Formulation}
+%As mentioned before, there are different outlier detection techniques that are developed to solve %specific problems. These techniques have taken the formulation of the problem into account, which is %determined by some factors such as the nature of input data, the type of outlier, data labels and the %output of outlier detection. We will go through each of these.
+
+%\textbf{Nature of Input Data}
+The input of outlier detection process is a collection of observations, each one of them can be described as a set of features of different types \citep{Kurukshetra}. These types can be binary, categorical or continuous. 
+%Observation that consists of one attribute is called univariate, while observation that consists of %multiple attributes is called multivariate \citep{Survey}.
+
+%\textbf{Data Labels}
+To distinguish between normal data and outliers in a data \textit{labels} are used. Labels should be accurate and it should represent all types of behaviors. It is easier to label all the normal behavior of the observation, than anomalous data, due to dynamic nature of the anomalous data, e.g., arises of mew types of outliers which are not labeled \citep{Survey}. Based on the extent to which the labels are available, outlier detection techniques can operate in different modes.
+
+\textbf{Modes of Outlier detection techniques}:
+\begin{itemize}
+\item{Supervised Outlier Detection}
+This technique assumes the availability of labeled training datasets as normal or as an outlier which are the classes in this predictive model. This technique faces a major issue in the limitation of unusual data in the training sets, as well as the accuracy of the data labels. Some techniques inject artificial in the normal data \citep{Kurukshetra}. 
+\item{Semi-Supervised Outlier Detection}
+This technique assumes that training data has labeled patterns for the normal data, and it is commonly used. There are some limited techniques that use labeled outliers instead of labeled normal data \citep{Kurukshetra}.
+\item{Unsupervised Outlier Detection}
+This is the most applicable technique due to nonessentiality of training data, the assumption made in this technique is that normal patterns are far than outliers in the dataset \citep{Kurukshetra}.
+\end{itemize}
+
+\textbf{Output of Outlier Detection}
+Outlier detection techniques produce the output in one of the following types:
+\begin{itemize}
+\item{Scores:}
+This technique assigns scores for all the observations in the test data based on the degree to which that observation is estimated to be an outlier. Hence the output will be a ranked list of all outliers which help the analyst to select the outliers \citep{Kurukshetra}.
+\item{Labels:}
+This technique assigns label normal or outlier for each observation in the dataset, in this case, the analyst has no control on the output \citep{Kurukshetra}.
+\end{itemize}
+
+\textbf{Outliers Detection Methods}
+\begin{itemize}
+\item{Univariate Methods:}
+There are different statistical theory methods to detect outliers in univariate data sets such as Chauvenet's criterion, Dixon's Q test and Grubb's test for outliers
+% \citep{Outlier} %
+. However, there are major weaknesses of these approaches: The dataset may not follow Gaussian distribution
+% \citep{NIST} %
+, also both mean and variance that used to find outliers are sensitive to them \citep{Songwon}. These approaches may include sample minimum or sample maximum which are not always outliers.
+\item{Multivariate Methods:}
+There are several methods to detect outliers in multivariate data sets, such as Robust Statistical-based Methods (e.g. Mahalanobis Distance method), Distance-based Methods (e.g. Distance to $k^{th}$ nearest neighbour method), Density-based Methods (e.g. Local Outlier Factor) and Artificial Intelligence Methods (e.g. Artificial Neural Networks and Support Vector Machines).
+% \citep{Silvia} %
+\end{itemize}
+
+\section{Outlier Detection Applications}
+There are several applications of outlier detection in different domains among them:
+\begin{itemize}
+\item{Fraud Detection:} 
+These are the fraudulent applications for credit cards, mobile phone or insurance claim \citep{Kurukshetra}, and these lead to unauthorized usages which may appear in different ways, such as a buying from obscure geographically locations, credit card transaction data and unauthorized and illegal insurance claims. %phd Sudan thesis
+\item{Intrusion Detection:} 
+Is the detection of malicious activity (break-ins, penetrations, and other forms of computer abuse) in a computer related system interesting from a computer security perspective \citep{Survey}.
+Detection of malicious activity in operating system calls, network traffic, or other unauthorized access activity in the system of host-based or networked computer systems.
+\item{Industrial Damage Detection:}
+This domain uses recorded sensors data which monitor the performance of industrial components \citep{Kurukshetra}, then these systems classify the defects that might occur due to wear and tear or any other reason \citep{Survey}.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Machine Learning (ML)}
+"Machine Learning is the field of study that gives computers the ability to learn without being explicitly programmed" (Arthur Samuel 1959). We can also define Machine Learning as "A computer program is said to learn from experience E with respect to some task T and some performance on T, as measured by P, improves with  experience E" (Tom Mitchell 1998). Machine Learning is one of the artificial intelligence fields that focus on building smart systems such as autonomous robotics, pattern recognition systems, Natural Language Processing(NLP) systems, computer vision and so forth.
+
+\textbf{Types of ML}
+\begin{itemize}
+\item \textbf{Supervised Learning:}
+Algorithms of this type take the input data as well as the right output (data set), and it associates these datasets and predicts better answers. The algorithm could be \textbf{Regression} if we want to predict continuous valued output, an example of this could be an algorithm to predict house price based on size of the house. The figure below illustrates the idea:
+There is also a \textbf{Classification} algorithm which is focused on predicting discrete values, for example if we want to decide whether a tumor type is either malignant or benign using tumor size.
+\item \textbf{Unsupervised Learning:}
+These type of algorithm finds structure out of the dataset by partitioning/clustering data. Unsupervised learning algorithm used in clustering Genes data, where the algorithm group genes based on how they respond to different experiments.
+\end{itemize}
+
+\textbf{ML in Outlier detection}
+\begin{figure}[!h]
+\centering 
+\includegraphics[width=0.5\textwidth]{images/OutlierDetection-grayscale}
+\caption{Outlier detection using supervised and unsupervised learning}
+\label{ML-OutlierDetection}
+\end{figure}

@@ -1,0 +1,250 @@
+\BOOKMARK [0][-]{chapter*.1}{Abstract}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
+\BOOKMARK [1][-]{section.1.1}{Defining Outliers}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Outlier Detection}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.3}{Outlier Detection Applications}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.4}{Machine Learning \(ML\)}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Local Outlier Factor}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Properties of LOF}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{LOF Algorithm}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{Support Vector Machines}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Basics of SVMs}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.3}% 12
+\BOOKMARK [0][-]{chapter.4}{Experiment}{}% 13
+\BOOKMARK [1][-]{section.4.1}{Methodology}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.2}{Methods Evaluation}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.3}{Dataset}{chapter.4}% 16
+\BOOKMARK [1][-]{section.4.4}{Results}{chapter.4}% 17
+\BOOKMARK [1][-]{section.4.5}{Discussion}{chapter.4}% 18
+\BOOKMARK [0][-]{chapter*.12}{Abstract}{}% 19
+\BOOKMARK [0][-]{chapter.5}{Introduction}{}% 20
+\BOOKMARK [1][-]{section.5.1}{Defining Outliers}{chapter.5}% 21
+\BOOKMARK [1][-]{section.5.2}{Outlier Detection}{chapter.5}% 22
+\BOOKMARK [1][-]{section.5.3}{Outlier Detection Applications}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.4}{Machine Learning \(ML\)}{chapter.5}% 24
+\BOOKMARK [0][-]{chapter.6}{Local Outlier Factor}{}% 25
+\BOOKMARK [1][-]{section.6.1}{Properties of LOF}{chapter.6}% 26
+\BOOKMARK [1][-]{section.6.2}{LOF Algorithm}{chapter.6}% 27
+\BOOKMARK [0][-]{chapter.7}{Support Vector Machines}{}% 28
+\BOOKMARK [1][-]{section.7.1}{Basics of SVMs}{chapter.7}% 29
+\BOOKMARK [1][-]{section.7.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.7}% 30
+\BOOKMARK [0][-]{chapter.8}{Experiment}{}% 31
+\BOOKMARK [1][-]{section.8.1}{Methodology}{chapter.8}% 32
+\BOOKMARK [1][-]{section.8.2}{Methods Evaluation}{chapter.8}% 33
+\BOOKMARK [1][-]{section.8.3}{Dataset}{chapter.8}% 34
+\BOOKMARK [1][-]{section.8.4}{Results}{chapter.8}% 35
+\BOOKMARK [1][-]{section.8.5}{Discussion}{chapter.8}% 36
+\BOOKMARK [0][-]{chapter*.23}{Abstract}{}% 37
+\BOOKMARK [0][-]{chapter.9}{Introduction}{}% 38
+\BOOKMARK [1][-]{section.9.1}{Defining Outliers}{chapter.9}% 39
+\BOOKMARK [1][-]{section.9.2}{Outlier Detection}{chapter.9}% 40
+\BOOKMARK [1][-]{section.9.3}{Outlier Detection Applications}{chapter.9}% 41
+\BOOKMARK [1][-]{section.9.4}{Machine Learning \(ML\)}{chapter.9}% 42
+\BOOKMARK [0][-]{chapter.10}{Local Outlier Factor}{}% 43
+\BOOKMARK [1][-]{section.10.1}{Properties of LOF}{chapter.10}% 44
+\BOOKMARK [1][-]{section.10.2}{LOF Algorithm}{chapter.10}% 45
+\BOOKMARK [0][-]{chapter.11}{Support Vector Machines}{}% 46
+\BOOKMARK [1][-]{section.11.1}{Basics of SVMs}{chapter.11}% 47
+\BOOKMARK [1][-]{section.11.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.11}% 48
+\BOOKMARK [0][-]{chapter.12}{Experiment}{}% 49
+\BOOKMARK [1][-]{section.12.1}{Methodology}{chapter.12}% 50
+\BOOKMARK [1][-]{section.12.2}{Methods Evaluation}{chapter.12}% 51
+\BOOKMARK [1][-]{section.12.3}{Dataset}{chapter.12}% 52
+\BOOKMARK [1][-]{section.12.4}{Results}{chapter.12}% 53
+\BOOKMARK [1][-]{section.12.5}{Discussion}{chapter.12}% 54
+\BOOKMARK [0][-]{chapter*.34}{Abstract}{}% 55
+\BOOKMARK [0][-]{chapter.13}{Introduction}{}% 56
+\BOOKMARK [1][-]{section.13.1}{Defining Outliers}{chapter.13}% 57
+\BOOKMARK [1][-]{section.13.2}{Outlier Detection}{chapter.13}% 58
+\BOOKMARK [1][-]{section.13.3}{Outlier Detection Applications}{chapter.13}% 59
+\BOOKMARK [1][-]{section.13.4}{Machine Learning \(ML\)}{chapter.13}% 60
+\BOOKMARK [0][-]{chapter.14}{Local Outlier Factor}{}% 61
+\BOOKMARK [1][-]{section.14.1}{Properties of LOF}{chapter.14}% 62
+\BOOKMARK [1][-]{section.14.2}{LOF Algorithm}{chapter.14}% 63
+\BOOKMARK [0][-]{chapter.15}{Support Vector Machines}{}% 64
+\BOOKMARK [1][-]{section.15.1}{Basics of SVMs}{chapter.15}% 65
+\BOOKMARK [1][-]{section.15.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.15}% 66
+\BOOKMARK [0][-]{chapter.16}{Experiment}{}% 67
+\BOOKMARK [1][-]{section.16.1}{Methodology}{chapter.16}% 68
+\BOOKMARK [1][-]{section.16.2}{Methods Evaluation}{chapter.16}% 69
+\BOOKMARK [1][-]{section.16.3}{Dataset}{chapter.16}% 70
+\BOOKMARK [1][-]{section.16.4}{Results}{chapter.16}% 71
+\BOOKMARK [1][-]{section.16.5}{Discussion}{chapter.16}% 72
+\BOOKMARK [0][-]{chapter*.45}{Abstract}{}% 73
+\BOOKMARK [0][-]{chapter.17}{Introduction}{}% 74
+\BOOKMARK [1][-]{section.17.1}{Defining Outliers}{chapter.17}% 75
+\BOOKMARK [1][-]{section.17.2}{Outlier Detection}{chapter.17}% 76
+\BOOKMARK [1][-]{section.17.3}{Outlier Detection Applications}{chapter.17}% 77
+\BOOKMARK [1][-]{section.17.4}{Machine Learning \(ML\)}{chapter.17}% 78
+\BOOKMARK [0][-]{chapter.18}{Local Outlier Factor}{}% 79
+\BOOKMARK [1][-]{section.18.1}{Properties of LOF}{chapter.18}% 80
+\BOOKMARK [1][-]{section.18.2}{LOF Algorithm}{chapter.18}% 81
+\BOOKMARK [0][-]{chapter.19}{Support Vector Machines}{}% 82
+\BOOKMARK [1][-]{section.19.1}{Basics of SVMs}{chapter.19}% 83
+\BOOKMARK [1][-]{section.19.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.19}% 84
+\BOOKMARK [0][-]{chapter.20}{Experiment}{}% 85
+\BOOKMARK [1][-]{section.20.1}{Methodology}{chapter.20}% 86
+\BOOKMARK [1][-]{section.20.2}{Methods Evaluation}{chapter.20}% 87
+\BOOKMARK [1][-]{section.20.3}{Dataset}{chapter.20}% 88
+\BOOKMARK [1][-]{section.20.4}{Results}{chapter.20}% 89
+\BOOKMARK [1][-]{section.20.5}{Discussion}{chapter.20}% 90
+\BOOKMARK [0][-]{chapter*.56}{Abstract}{}% 91
+\BOOKMARK [0][-]{chapter.21}{Introduction}{}% 92
+\BOOKMARK [1][-]{section.21.1}{Defining Outliers}{chapter.21}% 93
+\BOOKMARK [1][-]{section.21.2}{Outlier Detection}{chapter.21}% 94
+\BOOKMARK [1][-]{section.21.3}{Outlier Detection Applications}{chapter.21}% 95
+\BOOKMARK [1][-]{section.21.4}{Machine Learning \(ML\)}{chapter.21}% 96
+\BOOKMARK [0][-]{chapter.22}{Local Outlier Factor}{}% 97
+\BOOKMARK [1][-]{section.22.1}{Properties of LOF}{chapter.22}% 98
+\BOOKMARK [1][-]{section.22.2}{LOF Algorithm}{chapter.22}% 99
+\BOOKMARK [0][-]{chapter.23}{Support Vector Machines}{}% 100
+\BOOKMARK [1][-]{section.23.1}{Basics of SVMs}{chapter.23}% 101
+\BOOKMARK [1][-]{section.23.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.23}% 102
+\BOOKMARK [0][-]{chapter.24}{Experiment}{}% 103
+\BOOKMARK [1][-]{section.24.1}{Methodology}{chapter.24}% 104
+\BOOKMARK [1][-]{section.24.2}{Methods Evaluation}{chapter.24}% 105
+\BOOKMARK [1][-]{section.24.3}{Dataset}{chapter.24}% 106
+\BOOKMARK [1][-]{section.24.4}{Results}{chapter.24}% 107
+\BOOKMARK [1][-]{section.24.5}{Discussion}{chapter.24}% 108
+\BOOKMARK [0][-]{chapter*.67}{Abstract}{}% 109
+\BOOKMARK [0][-]{chapter.25}{Introduction}{}% 110
+\BOOKMARK [1][-]{section.25.1}{Defining Outliers}{chapter.25}% 111
+\BOOKMARK [1][-]{section.25.2}{Outlier Detection}{chapter.25}% 112
+\BOOKMARK [1][-]{section.25.3}{Outlier Detection Applications}{chapter.25}% 113
+\BOOKMARK [1][-]{section.25.4}{Machine Learning \(ML\)}{chapter.25}% 114
+\BOOKMARK [0][-]{chapter.26}{Local Outlier Factor}{}% 115
+\BOOKMARK [1][-]{section.26.1}{Properties of LOF}{chapter.26}% 116
+\BOOKMARK [1][-]{section.26.2}{LOF Algorithm}{chapter.26}% 117
+\BOOKMARK [0][-]{chapter.27}{Support Vector Machines}{}% 118
+\BOOKMARK [1][-]{section.27.1}{Basics of SVMs}{chapter.27}% 119
+\BOOKMARK [1][-]{section.27.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.27}% 120
+\BOOKMARK [0][-]{chapter.28}{Experiment}{}% 121
+\BOOKMARK [1][-]{section.28.1}{Methodology}{chapter.28}% 122
+\BOOKMARK [1][-]{section.28.2}{Methods Evaluation}{chapter.28}% 123
+\BOOKMARK [1][-]{section.28.3}{Dataset}{chapter.28}% 124
+\BOOKMARK [1][-]{section.28.4}{Results}{chapter.28}% 125
+\BOOKMARK [1][-]{section.28.5}{Discussion}{chapter.28}% 126
+\BOOKMARK [0][-]{chapter*.78}{Abstract}{}% 127
+\BOOKMARK [0][-]{chapter.29}{Introduction}{}% 128
+\BOOKMARK [1][-]{section.29.1}{Defining Outliers}{chapter.29}% 129
+\BOOKMARK [1][-]{section.29.2}{Outlier Detection}{chapter.29}% 130
+\BOOKMARK [1][-]{section.29.3}{Outlier Detection Applications}{chapter.29}% 131
+\BOOKMARK [1][-]{section.29.4}{Machine Learning \(ML\)}{chapter.29}% 132
+\BOOKMARK [0][-]{chapter.30}{Local Outlier Factor}{}% 133
+\BOOKMARK [1][-]{section.30.1}{Properties of LOF}{chapter.30}% 134
+\BOOKMARK [1][-]{section.30.2}{LOF Algorithm}{chapter.30}% 135
+\BOOKMARK [0][-]{chapter.31}{Support Vector Machines}{}% 136
+\BOOKMARK [1][-]{section.31.1}{Basics of SVMs}{chapter.31}% 137
+\BOOKMARK [1][-]{section.31.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.31}% 138
+\BOOKMARK [0][-]{chapter.32}{Experiment}{}% 139
+\BOOKMARK [1][-]{section.32.1}{Methodology}{chapter.32}% 140
+\BOOKMARK [1][-]{section.32.2}{Methods Evaluation}{chapter.32}% 141
+\BOOKMARK [1][-]{section.32.3}{Dataset}{chapter.32}% 142
+\BOOKMARK [1][-]{section.32.4}{Results}{chapter.32}% 143
+\BOOKMARK [1][-]{section.32.5}{Discussion}{chapter.32}% 144
+\BOOKMARK [0][-]{chapter*.89}{Abstract}{}% 145
+\BOOKMARK [0][-]{chapter.33}{Introduction}{}% 146
+\BOOKMARK [1][-]{section.33.1}{Defining Outliers}{chapter.33}% 147
+\BOOKMARK [1][-]{section.33.2}{Outlier Detection}{chapter.33}% 148
+\BOOKMARK [1][-]{section.33.3}{Outlier Detection Applications}{chapter.33}% 149
+\BOOKMARK [1][-]{section.33.4}{Machine Learning \(ML\)}{chapter.33}% 150
+\BOOKMARK [0][-]{chapter.34}{Local Outlier Factor}{}% 151
+\BOOKMARK [1][-]{section.34.1}{Properties of LOF}{chapter.34}% 152
+\BOOKMARK [1][-]{section.34.2}{LOF Algorithm}{chapter.34}% 153
+\BOOKMARK [0][-]{chapter.35}{Support Vector Machines}{}% 154
+\BOOKMARK [1][-]{section.35.1}{Basics of SVMs}{chapter.35}% 155
+\BOOKMARK [1][-]{section.35.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.35}% 156
+\BOOKMARK [0][-]{chapter.36}{Experiment}{}% 157
+\BOOKMARK [1][-]{section.36.1}{Methodology}{chapter.36}% 158
+\BOOKMARK [1][-]{section.36.2}{Methods Evaluation}{chapter.36}% 159
+\BOOKMARK [1][-]{section.36.3}{Dataset}{chapter.36}% 160
+\BOOKMARK [1][-]{section.36.4}{Results}{chapter.36}% 161
+\BOOKMARK [1][-]{section.36.5}{Discussion}{chapter.36}% 162
+\BOOKMARK [0][-]{chapter*.100}{Abstract}{}% 163
+\BOOKMARK [0][-]{chapter.37}{Introduction}{}% 164
+\BOOKMARK [1][-]{section.37.1}{Defining Outliers}{chapter.37}% 165
+\BOOKMARK [1][-]{section.37.2}{Outlier Detection}{chapter.37}% 166
+\BOOKMARK [1][-]{section.37.3}{Outlier Detection Applications}{chapter.37}% 167
+\BOOKMARK [1][-]{section.37.4}{Machine Learning \(ML\)}{chapter.37}% 168
+\BOOKMARK [0][-]{chapter.38}{Local Outlier Factor}{}% 169
+\BOOKMARK [1][-]{section.38.1}{Properties of LOF}{chapter.38}% 170
+\BOOKMARK [1][-]{section.38.2}{LOF Algorithm}{chapter.38}% 171
+\BOOKMARK [0][-]{chapter.39}{Support Vector Machines}{}% 172
+\BOOKMARK [1][-]{section.39.1}{Basics of SVMs}{chapter.39}% 173
+\BOOKMARK [1][-]{section.39.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.39}% 174
+\BOOKMARK [0][-]{chapter.40}{Experiment}{}% 175
+\BOOKMARK [1][-]{section.40.1}{Methodology}{chapter.40}% 176
+\BOOKMARK [1][-]{section.40.2}{Methods Evaluation}{chapter.40}% 177
+\BOOKMARK [1][-]{section.40.3}{Dataset}{chapter.40}% 178
+\BOOKMARK [1][-]{section.40.4}{Results}{chapter.40}% 179
+\BOOKMARK [1][-]{section.40.5}{Discussion}{chapter.40}% 180
+\BOOKMARK [0][-]{chapter*.111}{Abstract}{}% 181
+\BOOKMARK [0][-]{chapter.41}{Introduction}{}% 182
+\BOOKMARK [1][-]{section.41.1}{Defining Outliers}{chapter.41}% 183
+\BOOKMARK [1][-]{section.41.2}{Outlier Detection}{chapter.41}% 184
+\BOOKMARK [1][-]{section.41.3}{Outlier Detection Applications}{chapter.41}% 185
+\BOOKMARK [1][-]{section.41.4}{Machine Learning \(ML\)}{chapter.41}% 186
+\BOOKMARK [0][-]{chapter.42}{Local Outlier Factor}{}% 187
+\BOOKMARK [1][-]{section.42.1}{Properties of LOF}{chapter.42}% 188
+\BOOKMARK [1][-]{section.42.2}{LOF Algorithm}{chapter.42}% 189
+\BOOKMARK [0][-]{chapter.43}{Support Vector Machines}{}% 190
+\BOOKMARK [1][-]{section.43.1}{Basics of SVMs}{chapter.43}% 191
+\BOOKMARK [1][-]{section.43.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.43}% 192
+\BOOKMARK [0][-]{chapter.44}{Experiment}{}% 193
+\BOOKMARK [1][-]{section.44.1}{Methodology}{chapter.44}% 194
+\BOOKMARK [1][-]{section.44.2}{Methods Evaluation}{chapter.44}% 195
+\BOOKMARK [1][-]{section.44.3}{Dataset}{chapter.44}% 196
+\BOOKMARK [1][-]{section.44.4}{Results}{chapter.44}% 197
+\BOOKMARK [1][-]{section.44.5}{Discussion}{chapter.44}% 198
+\BOOKMARK [0][-]{chapter*.122}{Abstract}{}% 199
+\BOOKMARK [0][-]{chapter.45}{Introduction}{}% 200
+\BOOKMARK [1][-]{section.45.1}{Defining Outliers}{chapter.45}% 201
+\BOOKMARK [1][-]{section.45.2}{Outlier Detection}{chapter.45}% 202
+\BOOKMARK [1][-]{section.45.3}{Outlier Detection Applications}{chapter.45}% 203
+\BOOKMARK [1][-]{section.45.4}{Machine Learning \(ML\)}{chapter.45}% 204
+\BOOKMARK [0][-]{chapter.46}{Local Outlier Factor}{}% 205
+\BOOKMARK [1][-]{section.46.1}{Properties of LOF}{chapter.46}% 206
+\BOOKMARK [1][-]{section.46.2}{LOF Algorithm}{chapter.46}% 207
+\BOOKMARK [0][-]{chapter.47}{Support Vector Machines}{}% 208
+\BOOKMARK [1][-]{section.47.1}{Basics of SVMs}{chapter.47}% 209
+\BOOKMARK [1][-]{section.47.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.47}% 210
+\BOOKMARK [0][-]{chapter.48}{Experiment}{}% 211
+\BOOKMARK [1][-]{section.48.1}{Methodology}{chapter.48}% 212
+\BOOKMARK [1][-]{section.48.2}{Methods Evaluation}{chapter.48}% 213
+\BOOKMARK [1][-]{section.48.3}{Dataset}{chapter.48}% 214
+\BOOKMARK [1][-]{section.48.4}{Results}{chapter.48}% 215
+\BOOKMARK [1][-]{section.48.5}{Discussion}{chapter.48}% 216
+\BOOKMARK [0][-]{chapter*.133}{Abstract}{}% 217
+\BOOKMARK [0][-]{chapter.49}{Introduction}{}% 218
+\BOOKMARK [1][-]{section.49.1}{Defining Outliers}{chapter.49}% 219
+\BOOKMARK [1][-]{section.49.2}{Outlier Detection}{chapter.49}% 220
+\BOOKMARK [1][-]{section.49.3}{Outlier Detection Applications}{chapter.49}% 221
+\BOOKMARK [1][-]{section.49.4}{Machine Learning \(ML\)}{chapter.49}% 222
+\BOOKMARK [0][-]{chapter.50}{Local Outlier Factor}{}% 223
+\BOOKMARK [1][-]{section.50.1}{Properties of LOF}{chapter.50}% 224
+\BOOKMARK [1][-]{section.50.2}{LOF Algorithm}{chapter.50}% 225
+\BOOKMARK [0][-]{chapter.51}{Support Vector Machines}{}% 226
+\BOOKMARK [1][-]{section.51.1}{Basics of SVMs}{chapter.51}% 227
+\BOOKMARK [1][-]{section.51.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.51}% 228
+\BOOKMARK [0][-]{chapter.52}{Experiment}{}% 229
+\BOOKMARK [1][-]{section.52.1}{Methodology}{chapter.52}% 230
+\BOOKMARK [1][-]{section.52.2}{Methods Evaluation}{chapter.52}% 231
+\BOOKMARK [1][-]{section.52.3}{Dataset}{chapter.52}% 232
+\BOOKMARK [1][-]{section.52.4}{Results}{chapter.52}% 233
+\BOOKMARK [1][-]{section.52.5}{Discussion}{chapter.52}% 234
+\BOOKMARK [0][-]{chapter*.144}{Abstract}{}% 235
+\BOOKMARK [0][-]{chapter.53}{Introduction}{}% 236
+\BOOKMARK [1][-]{section.53.1}{Defining Outliers}{chapter.53}% 237
+\BOOKMARK [1][-]{section.53.2}{Outlier Detection}{chapter.53}% 238
+\BOOKMARK [1][-]{section.53.3}{Outlier Detection Applications}{chapter.53}% 239
+\BOOKMARK [1][-]{section.53.4}{Machine Learning \(ML\)}{chapter.53}% 240
+\BOOKMARK [0][-]{chapter.54}{Local Outlier Factor}{}% 241
+\BOOKMARK [1][-]{section.54.1}{Properties of LOF}{chapter.54}% 242
+\BOOKMARK [1][-]{section.54.2}{LOF Algorithm}{chapter.54}% 243
+\BOOKMARK [0][-]{chapter.55}{Support Vector Machines}{}% 244
+\BOOKMARK [1][-]{section.55.1}{Basics of SVMs}{chapter.55}% 245
+\BOOKMARK [1][-]{section.55.2}{One Class Support Vector Machine \(OCSVM\)}{chapter.55}% 246
+\BOOKMARK [0][-]{chapter.56}{Experiment}{}% 247
+\BOOKMARK [1][-]{section.56.1}{Methodology}{chapter.56}% 248
+\BOOKMARK [1][-]{section.56.2}{Methods Evaluation}{chapter.56}% 249
+\BOOKMARK [1][-]{section.56.3}{Dataset}{chapter.56}% 250

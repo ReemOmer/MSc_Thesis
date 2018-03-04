@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: master-document.aux
+The style file: abbrvnat.bst
+Database file #1: references.bib
+Warning--entry type for "Songwon" isn't style-file defined
+--line 56 of file references.bib
+Warning--entry type for "Hongyin" isn't style-file defined
+--line 81 of file references.bib
+Warning--entry type for "Malak" isn't style-file defined
+--line 101 of file references.bib
+Warning--entry type for "Roemer" isn't style-file defined
+--line 123 of file references.bib
+Warning--entry type for "Thuso" isn't style-file defined
+--line 143 of file references.bib
+Warning--entry type for "OCSVM" isn't style-file defined
+--line 156 of file references.bib
+Warning--entry type for "RBFkernel" isn't style-file defined
+--line 197 of file references.bib
+Warning--entry type for "Hyperplane" isn't style-file defined
+--line 202 of file references.bib
+Warning--entry type for "Confusion" isn't style-file defined
+--line 207 of file references.bib
+Warning--entry type for "ROC" isn't style-file defined
+--line 212 of file references.bib
+Warning--entry type for "AUC" isn't style-file defined
+--line 217 of file references.bib
+Warning--entry type for "AUROC" isn't style-file defined
+--line 222 of file references.bib
+Warning--to sort, need author or key in SVM
+Warning--to sort, need author or key in Hyperplane
+Warning--to sort, need author or key in OCSVM
+Warning--to sort, need author or key in RBFkernel
+Warning--to sort, need author or key in Confusion
+Warning--to sort, need author or key in ROC
+Warning--to sort, need author or key in AUROC
+Warning--to sort, need author or key in AUC
+Warning--there's a number but no series in Barnett
+Warning--empty booktitle in Markus
+Warning--empty booktitle in Knorr
+Warning--empty booktitle in Edgar
+Warning--there's a number but no series in Maimon
+Warning--there's a number but no series in Scholkopf
+Warning--there's a number but no series in Silvia
+You've used 34 entries,
+            2773 wiz_defined-function locations,
+            780 strings with 10103 characters,
+and the built_in function-call counts, 10784 in all, are:
+= -- 972
+> -- 406
+< -- 24
++ -- 154
+- -- 120
+* -- 680
+:= -- 1483
+add.period$ -- 98
+call.type$ -- 34
+change.case$ -- 140
+chr.to.int$ -- 34
+cite$ -- 91
+duplicate$ -- 579
+empty$ -- 1130
+format.name$ -- 160
+if$ -- 2395
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 16
+newline$ -- 170
+num.names$ -- 88
+pop$ -- 411
+preamble$ -- 1
+purify$ -- 112
+quote$ -- 0
+skip$ -- 495
+stack$ -- 0
+substring$ -- 104
+swap$ -- 46
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 349
+warning$ -- 15
+while$ -- 68
+width$ -- 0
+write$ -- 402
+(There were 27 warnings)
